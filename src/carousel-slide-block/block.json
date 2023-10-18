@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "create-block/carousel-slide-block",
+	"version": "0.1.0",
+	"title": "Carousel Slide Block",
+	"category": "merakistarter",
+	"description": "Carousel Slide Block",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"titleCarousel1": {
+			"type": "string",
+			"default": "Title Carousel 1"
+		},
+		"mediaURL1": {
+			"type": "string",
+			"default": ""
+		},
+		"mediaID1": {
+			"type": "number"
+		},
+		"mediaAlt1": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "gutenpride",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"script": "file:./script.js",
+	"viewScript": "file:./frontend.js",
+	"render": "file:./render.php"
+}
