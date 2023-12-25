@@ -21,7 +21,7 @@
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 
-define('MY_PLUGIN_PATH',plugin_dir_url(__FILE__));
+define('MY_PLUGIN_PATH_CUSTOM_BLOCKS',plugin_dir_url(__FILE__));
 
 require_once(__DIR__ . '/register_blocks.php');  
 

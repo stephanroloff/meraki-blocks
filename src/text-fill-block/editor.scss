@@ -1,0 +1,29 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-create-block-text-fill-block.has-child-selected,
+.wp-block-create-block-text-fill-block.is-selected {
+    .text-foreground{
+		position: relative !important;
+    }
+
+    .text-background{
+        display: block !important;
+		position: relative !important;
+
+    }
+ }
+
+ .wp-block-create-block-text-fill-block {
+    .text-foreground{
+		position: relative !important;
+    }
+
+    .text-background{
+        display: none;
+		position: relative !important;
+    }
+ }

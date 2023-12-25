@@ -35,6 +35,7 @@ function create_blocks() {
     register_block_type( dirname(__FILE__) . '/build/accordion-vertical-text-block');
     register_block_type( dirname(__FILE__) . '/build/multi-layer-block');
     register_block_type( dirname(__FILE__) . '/build/layer-block');
+    register_block_type( dirname(__FILE__) . '/build/text-fill-block');
    
 }
 add_action( 'init', 'create_blocks' );
