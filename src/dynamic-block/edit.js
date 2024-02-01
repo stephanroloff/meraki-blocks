@@ -9,9 +9,9 @@ export default function Edit({ attributes }) {
 		<div {...useBlockProps()}>
 			<ServerSideRender
 				block={metadata.name}
-				attributes={{
-					amountSelected: attributes.amountSelected
-				}}
+				// attributes={{
+				// 	amountSelected: attributes.amountSelected
+				// }}
 			/>
 		</div>
 	);

@@ -1,18 +1,24 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
-	"name": "create-block/layer-block",
+	"name": "create-block/marquee-block",
 	"version": "0.1.0",
-	"title": "Layer Block",
-	"category": "merakistarter",
-	"description": "Layer Block",
+	"title": "Marquee Block",
+	"category": "widgets",
+	"description": "Marquee Block",
+	"icon": "editor-textcolor",
 	"supports": {
 		"html": false,
 		"align": true
 	},
 	"attributes": {
-		"amountSelected": {
-			"type": "string"
+		"reverse": {
+			"type": "boolean",
+			"default": false
+		},
+		"animationTime": {
+			"type": "string",
+			"default": "10"
 		}
 	},
 	"textdomain": "gutenpride",

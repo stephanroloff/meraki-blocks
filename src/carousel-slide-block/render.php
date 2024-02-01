@@ -12,28 +12,12 @@
 
 $wrapper_attributes = get_block_wrapper_attributes();
 
-if($attributes['mediaURL1']){
-    $mediaURL1 = $attributes['mediaURL1'];
-}else{
-    $mediaURL1 = '';
-}
-
-if($attributes['mediaAlt1']){
-    $mediaAlt1 = $attributes['mediaAlt1'];
-}else{
-    $mediaAlt1 = '';
-}
 ?>
 
 <div class="swiper-slide">
     <div class="slide_intern">    
-        <img 
-            class="slide-img" 
-            src="<?php echo $mediaURL1;?>" 
-            alt="<?php echo $mediaAlt1;?>"
-        >
+        <?php echo $content?>
         <!-- <div class="swiper-lazy-preloader"></div> -->
-        <p class="slide-text"><?php echo $attributes['titleCarousel1']?></p>
     </div>
 </div>
 
