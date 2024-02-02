@@ -5,21 +5,23 @@ import {
 	ToggleControl,
 	PanelBody,
 	PanelRow,
+	Button,
 	__experimentalNumberControl as NumberControl
 } from '@wordpress/components';
+import { useState } from 'react';
 
 export default function Edit(props) {
 	let { attributes, setAttributes, isSelected } = props;
 	let { reverse, animationTime } = attributes;
+	const [ editMode, setEditMode ] = useState( false );
 
-	// console.log(props);
-	// let childSelected;
-	// let child = document.querySelector('.wp-block-create-block-marquee-block');
-	// if(child){
-	// 	console.log(child.classList);
-	// 	console.log(child.classList.contains('has-child-selected'));
-	// 	childSelected = child.classList.contains('has-child-selected');
-	// }
+	function buttonCliked() {
+		if(editMode){
+			setEditMode(false);
+		}else{
+			setEditMode(true);
+		}
+	}
 
 	const MY_TEMPLATE = [
 		['core/heading', { placeholder: 'Marquee Text Block' }],
@@ -30,6 +32,9 @@ export default function Edit(props) {
 
 			<InspectorControls>
 				<PanelBody>
+					<PanelRow>
+						<Button variant="primary" onClick={buttonCliked}>{editMode? 'Out of edit mode':'Edit block'}</Button>
+					</PanelRow>
 					<PanelRow>
 						<ToggleControl
 							label="Reverse"
@@ -53,11 +58,10 @@ export default function Edit(props) {
 				</PanelBody>
 			</InspectorControls>
 
-			{/* {!childSelected? ( */}
-			{!isSelected? (
+
+			{!editMode ? (
 				<div class="marquee-editor">
 					<p>MARQUEE BLOCK</p>
-					<p>Click me to edit</p>
 				</div>
 			):(
 				<InnerBlocks

@@ -26,7 +26,6 @@ $wrapper_attributes = get_block_wrapper_attributes();
       </div>
     </div>
   </section>
-  <?php echo $attributes['reverse'] ?>
 
 </div>
     
