@@ -7,14 +7,24 @@ export default function Edit(props) {
 	let { attributes, setAttributes } = props;
 	let { titleAccordion } = attributes;
 
+	// const MY_TEMPLATE = [
+	// 	['core/paragraph', { placeholder: 'Summary' }],
+	// ];
 	const MY_TEMPLATE = [
-		['core/heading', { placeholder: 'Book Title' }],
-		['core/paragraph', { placeholder: 'Summary' }],
+		['core/group', {className: 'accordion'},[
+			['core/image', {}],
+			['core/heading', {placeholder: 'Accordion title'}]
+		]],
+		['core/group', {className: 'panel'},[
+			['core/group', {className: 'inner-content'},[
+				['core/paragraph', {placeholder: 'Accordion description'}]
+			]]
+		]],
 	];
 
 	return (
 		<div {...useBlockProps()}>
-			<div className="accordion">
+			{/* <div className="accordion">
 				<MyMediaUpload
 					properties={props}
 					mediaIDAttrName={"mediaID1"}
@@ -29,10 +39,13 @@ export default function Edit(props) {
 					onChange={(titleAccordion) => setAttributes({ titleAccordion })}
 					placeholder={__('Title Accordion...')}
 				/>
-			</div>
-			<div class="panel">
-				<InnerBlocks template={MY_TEMPLATE} />
-			</div>
+			</div> */}
+			{/* <div class="panel"> */}
+				<InnerBlocks
+				 template={MY_TEMPLATE} 
+				 templateLock="all"
+				/>
+			{/* </div> */}
 		</div>
 	);
 }

@@ -13,13 +13,13 @@ import { useState } from 'react';
 export default function Edit(props) {
 	let { attributes, setAttributes, isSelected } = props;
 	let { reverse, animationTime } = attributes;
-	const [ editMode, setEditMode ] = useState( false );
+	const [ editModeMarquee, setEditModeMarquee ] = useState( false );
 
 	function buttonCliked() {
-		if(editMode){
-			setEditMode(false);
+		if(editModeMarquee){
+			setEditModeMarquee(false);
 		}else{
-			setEditMode(true);
+			setEditModeMarquee(true);
 		}
 	}
 
@@ -33,7 +33,7 @@ export default function Edit(props) {
 			<InspectorControls>
 				<PanelBody>
 					<PanelRow>
-						<Button variant="primary" onClick={buttonCliked}>{editMode? 'Out of edit mode':'Edit block'}</Button>
+						<Button variant="primary" onClick={buttonCliked}>{editModeMarquee? 'Out of edit mode':'Edit block'}</Button>
 					</PanelRow>
 					<PanelRow>
 						<ToggleControl
@@ -59,7 +59,7 @@ export default function Edit(props) {
 			</InspectorControls>
 
 
-			{!editMode ? (
+			{!editModeMarquee ? (
 				<div class="marquee-editor">
 					<p>MARQUEE BLOCK</p>
 				</div>
