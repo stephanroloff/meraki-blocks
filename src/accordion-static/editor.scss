@@ -6,6 +6,25 @@
 
 [data-type="create-block/accordion-static-block"] {
 	border: 1px solid #dfdada;
+	margin-top: 0 !important;
+
+	.accordion{
+		.wp-block-columns{
+			width: 100%;
+			.wp-block-column{
+				height: 100%;
+				display: flex;
+				align-items: center;
+				.wp-block-image{
+					height: 100%;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+			}
+		}
+
+	}
 
 	.panel {
 		max-height: 100%;

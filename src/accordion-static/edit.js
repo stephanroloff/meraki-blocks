@@ -1,51 +1,55 @@
 import { __ } from '@wordpress/i18n';
-import { InnerBlocks, useBlockProps, RichText, } from '@wordpress/block-editor';
-import MyMediaUpload from '../components/MyMediaUpload';
+import { InnerBlocks, useBlockProps, InspectorControls } from '@wordpress/block-editor';
 import './editor.scss';
+import {
+	ToggleControl,
+	PanelBody,
+	PanelRow,
+	Button,
+} from '@wordpress/components';
+import arrowImage from './assets/pfeil_accordion.png';
 
-export default function Edit(props) {
-	let { attributes, setAttributes } = props;
-	let { titleAccordion } = attributes;
 
-	// const MY_TEMPLATE = [
-	// 	['core/paragraph', { placeholder: 'Summary' }],
-	// ];
+export default function Edit() {
+
 	const MY_TEMPLATE = [
-		['core/group', {className: 'accordion'},[
-			['core/image', {}],
-			['core/heading', {placeholder: 'Accordion title'}]
+		['core/group', {className: 'accordion'}, [
+			['core/columns', {},
+				[
+					['core/column', {width: '10%'},
+						[
+							['core/image', {url: arrowImage}],
+						]
+					],
+					['core/column', {width: '90%'},
+						[
+							['core/heading', {placeholder: 'Accordion title'}]
+						]
+					]
+				]
+			],
 		]],
-		['core/group', {className: 'panel'},[
-			['core/group', {className: 'inner-content'},[
+		['core/group', {className: 'panel'}, [
+			['core/group', {className: 'inner-content'}, [
 				['core/paragraph', {placeholder: 'Accordion description'}]
 			]]
 		]],
 	];
-
+	
 	return (
 		<div {...useBlockProps()}>
-			{/* <div className="accordion">
-				<MyMediaUpload
-					properties={props}
-					mediaIDAttrName={"mediaID1"}
-					mediaURLAttrName={"mediaURL1"}
-					mediaAltAttrName={"mediaAlt1"}
-				/>
-				<RichText
-					className='accordion-arrow'
-					tagName="p"
-					value={titleAccordion}
-					allowedFormats={['core/bold', 'core/italic']}
-					onChange={(titleAccordion) => setAttributes({ titleAccordion })}
-					placeholder={__('Title Accordion...')}
-				/>
-			</div> */}
-			{/* <div class="panel"> */}
-				<InnerBlocks
-				 template={MY_TEMPLATE} 
-				 templateLock="all"
-				/>
-			{/* </div> */}
+			<InspectorControls>
+				<PanelBody>
+					<PanelRow>
+						
+					</PanelRow>
+				</PanelBody>
+			</InspectorControls>
+			
+			<InnerBlocks
+				template={MY_TEMPLATE} 
+				templateLock="all"
+			/>
 		</div>
 	);
 }

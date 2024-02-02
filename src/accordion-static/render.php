@@ -11,32 +11,9 @@
  */
 
 $wrapper_attributes = get_block_wrapper_attributes();
-
-if($attributes['mediaURL1']){
-    $mediaURL1 = $attributes['mediaURL1'];
-}else{
-    $mediaURL1 = '';
-}
-
-if($attributes['mediaAlt1']){
-    $mediaAlt1 = $attributes['mediaAlt1'];
-}else{
-    $mediaAlt1 = '';
-}
 ?>
 
 <div <?php echo $wrapper_attributes?>>
-    <!-- <div class="accordion">
-        <?php if($mediaURL1): ?>
-            <img class= "accordion-arrow" src="<?php echo $mediaURL1;?>" alt="<?php echo $mediaAlt1;?>">
-        <?php else:?>
-            <img class="accordion-arrow" src="<?php echo MY_PLUGIN_PATH_CUSTOM_BLOCKS . "src/accordion-static/assets/pfeil_accordion.png"; ?>" alt="no-arrow">
-        <?php endif?>
-        <p class="accordion-arrow"><?php echo $attributes['titleAccordion']?></p>
-    </div>
-    <div class="panel">
-        <div class="inner-content"><?php echo $content?></div>
-    </div> -->
     <?php echo $content?>
 </div>
     

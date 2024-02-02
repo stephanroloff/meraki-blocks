@@ -7,7 +7,6 @@
 	"category": "merakistarter",
 	"description": "Accordion Static Block",
 	"supports": {
-		"html": false,
 		"align": true
 	},
 	"attributes": {
