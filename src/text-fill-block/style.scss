@@ -7,19 +7,34 @@
 	.text-fill-container{
 		position: relative;
 		display: inline-block;
+		text-align: center;
+		text-align: right;
 		
 		.text-foreground{
 			position: relative;
 			top: 0;
+			left: 0;
 			margin: 0;
-			width: 0%;
+			width: 100%;
+			display: inline;
+
 			z-index: 10;
+			// background-image: linear-gradient(aquamarine, aquamarine);
+			// background-size: 20% 100%;
+			background-clip: text;
+			color: transparent !important;
+			background-repeat: no-repeat;
+
 		}
 		
 		.text-background{
 			position: absolute;
 			top: 0;
+			left: 0;
 			margin: 0;
+			width: 100%;
+			display: inline;
+
 		}
 	}
 }

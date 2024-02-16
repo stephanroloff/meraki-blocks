@@ -7,5 +7,6 @@ import metadata from './block.json';
 
 registerBlockType(metadata, {
 	edit: Edit,
+	// save: () => null
 	save,
 });

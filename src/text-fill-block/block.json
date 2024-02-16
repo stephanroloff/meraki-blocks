@@ -5,14 +5,40 @@
 	"version": "0.1.0",
 	"title": "Text-Fill-block",
 	"category": "merakistarter",
-	"description": "Text-Fill-block",
+	"description": "This block contains 2 Headings, the first one is in front and the second one is behind. The headings must have different font colors.",
 	"supports": {
-		"html": false
+		"html": false,
+		"align": true
 	},
+	"icon": "editor-textcolor",
 	"attributes": {
-		"amountSelected": {
+		"colorSelectedBackground": {
 			"type": "string",
-			"default": "Steph"
+			"default": "#DDDDDD"
+		},
+		"colorSelectedForeground": {
+			"type": "string",
+			"default": "#000000"
+		},
+		"text": {
+			"type": "string",
+			"default": "Text Placeholder"
+		},
+		"headingSelected": {
+			"type": "string",
+			"default": "h2"
+		},
+		"textAlign":{
+			"type": "string",
+			"default": "left"
+		},
+		"browserHeight": {
+			"type": "string",
+			"default": "7"
+		},
+		"speed": {
+			"type": "string",
+			"default": "4"
 		}
 	},
 	"textdomain": "gutenpride",

@@ -11,19 +11,27 @@
     }
 
     .text-background{
-        display: block !important;
+        // display: block !important;
+        display: none !important;
 		position: relative !important;
 
     }
  }
 
  .wp-block-create-block-text-fill-block {
-    .text-foreground{
-		position: relative !important;
-    }
+    .text-fill-container{
+        .text-foreground{
+        position: relative !important;
+        width: 100%;
+        }
 
-    .text-background{
+        .text-background{
         display: none;
-		position: relative !important;
+        position: relative !important;
+        }
     }
+ }
+
+ .components-panel__row .components-base-control{
+    width: 100%;
  }
