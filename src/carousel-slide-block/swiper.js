@@ -34,10 +34,10 @@ setTimeout(() => {
         el: '.swiper-scrollbar',
       },
 
-      // autoplay: {
-      //   delay: 5000,
-      // },
-      autoplay: false,
+      autoplay: {
+        delay: 5000,
+      },
+      autoplay: true,
 
       // slidesPerView: numberOfSliders
       slidesPerView: '1',

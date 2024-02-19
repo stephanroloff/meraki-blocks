@@ -1,5 +1,6 @@
 // core version + navigation, pagination modules:
 import Swiper, { Navigation, Pagination, Autoplay } from 'swiper';
+import {getDatavalues} from './helpers/getDataValues'
 
 // import Swiper and modules styles
 // import 'swiper/css';
@@ -11,36 +12,41 @@ setTimeout(() => {
 
   function startSwiper() {
 
+    let {dataAutoplay, dataSpeed, dataDelay, dataVertical, dataShowBullets, dataShowArrows} = getDatavalues();
+    console.log(typeof(dataVertical));
+
+
     const swiper = new Swiper('.wp-block-create-block-carousel-block', {
       // Optional parameters
       // direction: 'vertical',
-      direction: 'horizontal',
+      direction: dataVertical == "true"? 'vertical' : 'horizontal',
       // loop: false,
       loop: true,
       modules: [Navigation, Pagination, Autoplay],
 
       // If we need pagination
-      pagination: {
+      pagination: dataShowBullets == "true"? {
         el: '.swiper-pagination',
-      },
+      } : false,
 
       // Navigation arrows
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
+      // navigation: dataShowArrows == "true"? {
+      //   nextEl: '.swiper-button-next',
+      //   prevEl: '.swiper-button-prev',
+      // } : false,
+      navigation: false,
 
       // And if we need scrollbar
       scrollbar: {
         el: '.swiper-scrollbar',
       },
 
-      // speed: 1000,
-      // autoplay: {
-      //   delay: 2000,
-      //   disableOnInteraction: false,
-      // },
-      autoplay: false,
+      speed: dataSpeed || 1000,
+      autoplay: dataAutoplay == "true"?
+      {
+        delay: dataDelay || 1000,
+        disableOnInteraction: false,
+      } : false,
 
       slidesPerView: '1',
     });
@@ -64,4 +70,4 @@ setTimeout(() => {
   // }
   //-------------------------------------------------------
 
-}, 10)
+}, 100)

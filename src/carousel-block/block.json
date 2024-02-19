@@ -7,9 +7,35 @@
 	"category": "merakistarter",
 	"description": "Carousel Block",
 	"supports": {
-		"html": false
+		"html": false,
+		"align": true
 	},
-	"attributes": {},
+	"attributes": {
+		"autoplay": {
+			"type": "boolean",
+			"default": false
+		},
+		"vertical": {
+			"type": "boolean",
+			"default": false
+		},
+		"showBullets": {
+			"type": "boolean",
+			"default": false
+		},
+		"showArrows": {
+			"type": "boolean",
+			"default": false
+		},
+		"delay": {
+			"type": "string",
+			"default": "2000"
+		},
+		"speed": {
+			"type": "string",
+			"default": "1000"
+		}
+	},
 	"textdomain": "gutenpride",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",

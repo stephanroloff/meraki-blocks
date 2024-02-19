@@ -58,7 +58,6 @@ export default function Edit(props) {
 				</PanelBody>
 			</InspectorControls>
 
-
 			{!editModeMarquee ? (
 				<div class="marquee-editor">
 					<p>MARQUEE BLOCK</p>

@@ -23,7 +23,7 @@ export default function Edit(props) {
 				<PanelBody>
 					<PanelRow>
 						<NumberControl
-							label={'Animation duration'}
+							label={'Animation duration (ms)'}
 							min={0}
 							onChange={value => setAttributes({ animationDuration: value })}
 							value={animationDuration}
@@ -31,7 +31,7 @@ export default function Edit(props) {
 					</PanelRow>
 					<PanelRow>
 						<NumberControl
-							label={'Animation delay'}
+							label={'Animation delay (ms)'}
 							min={0}
 							onChange={value => setAttributes({ animationDelay: value })}
 							value={animationDelay}
@@ -39,7 +39,7 @@ export default function Edit(props) {
 					</PanelRow>
 					<PanelRow>
 						<NumberControl
-							label={'Text Height'}
+							label={'Text Height (px)'}
 							min={0}
 							onChange={value => setAttributes({ textHeight: value })}
 							value={textHeight}
