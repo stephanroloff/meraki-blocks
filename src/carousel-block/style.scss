@@ -6,8 +6,11 @@
 @import 'swiper/css';
 @import 'swiper/css/navigation';
 @import 'swiper/css/pagination';
+@import 'swiper/css/effect-fade';
 
 .wp-block-create-block-carousel-block{
+	min-height: 300px;
+	height: 300px;
 	&.swiper {
 		.swiper-wrapper {
 	

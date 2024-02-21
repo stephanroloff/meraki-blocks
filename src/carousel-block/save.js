@@ -2,7 +2,7 @@ import { __ } from '@wordpress/i18n';
 import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 
 export default function save(props) {
-    let {autoplay, delay, speed, vertical, showBullets, showArrows} = props.attributes
+    let {autoplay, delay, speed, vertical, showBullets, showArrows, height, effect} = props.attributes
     const blockProps = useBlockProps.save({ className: 'swiper' });
 
     return (
@@ -13,6 +13,8 @@ export default function save(props) {
             data-vertical={vertical}
             data-show-bullets={showBullets}
             data-show-arrows={showArrows}
+            data-effect={effect}
+            style={{ height: `${height}px` }} 
         >
             <div className="swiper-wrapper">
                 <InnerBlocks.Content />

@@ -1,15 +1,12 @@
 import { __ } from '@wordpress/i18n';
 import { InnerBlocks, useBlockProps, InspectorControls } from '@wordpress/block-editor';
-import {
-	PanelBody,
-	PanelRow,
-	__experimentalNumberControl as NumberControl,
-} from '@wordpress/components';
+import { PanelBody } from '@wordpress/components';
 import './editor.scss';
+import MyEditModeButton from '../components/MyEditModeButton';
+import MyNumberControl from '../components/MyNumberControl';
 
 export default function Edit(props) {
-	const { attributes, setAttributes } = props;
-	const { amountSelected } = attributes;
+	let {editModeActive, height} = props.attributes
 
 	const MY_TEMPLATE = [
 		['core/group', { className: 'accordion-container' }, [
@@ -22,29 +19,24 @@ export default function Edit(props) {
 	];
 
 	return (
-		<div {...useBlockProps()}>
+		<div {...useBlockProps()} >
 			<InspectorControls>
 				<PanelBody>
-					<PanelRow>
-						<h2>ACCORDION VERTICAL</h2>                                            {/***/}
-					</PanelRow>
-					<PanelRow>
-						<NumberControl
-							label={'Height'}
-							min={200}
-							onChange={value => setAttributes({ amountSelected: value })}
-							value={amountSelected || 0}
-						/>
-					</PanelRow>
-					<PanelRow>
-						<p>Min-Height: 200px</p>                                            {/***/}
-					</PanelRow>
+					<MyEditModeButton properties={props}/><br/>
+					<MyNumberControl name={'Height (px)'} attrName={'height'} min ={0} properties={props} />
+					<p>min-height: 200px</p>
 				</PanelBody>
 			</InspectorControls>
 
-			<InnerBlocks
-				template={MY_TEMPLATE}
-			/>
+			{!editModeActive ? (
+				<div class="accordion-vertical-editor">
+					<p>ACCORDION VERTICAL BLOCK</p>
+				</div>
+			):(
+				<InnerBlocks
+					template={MY_TEMPLATE}
+				/>
+			)}
 		</div>
 	);
 }

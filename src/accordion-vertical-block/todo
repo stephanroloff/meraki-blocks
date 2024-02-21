@@ -1,4 +1,2 @@
 1-Cuando se ponen varios acordiones solo funciona el primero
     (Segunramente un problema con querySelectAll)
-
-2-La altura en frontend es distinta a la del editor

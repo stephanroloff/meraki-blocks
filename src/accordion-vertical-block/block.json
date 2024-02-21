@@ -10,8 +10,9 @@
 		"html": false
 	},
 	"attributes": {
-		"amountSelected": {
-			"type": "string"
+		"height": {
+			"type": "string",
+			"default": "200"
 		}
 	},
 	"textdomain": "gutenpride",
