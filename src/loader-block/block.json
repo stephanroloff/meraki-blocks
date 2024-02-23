@@ -1,0 +1,38 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "create-block/loader-block",
+	"version": "0.1.0",
+	"title": "Loader Block",
+	"category": "widgets",
+	"icon": "update",
+	"description": "You can only see how this Block works on the Frontend",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"height": {
+			"type": "string",
+			"default": "200"
+		},
+		"width": {
+			"type": "string",
+			"default": "200"
+		},
+		"time": {
+			"type": "string",
+			"default": "2000"
+		},
+		"loaderType": {
+			"type": "string",
+			"default": "loader-spinner"
+		}
+	},
+	"textdomain": "gutenpride",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"script": "file:./script.js",
+	"viewScript": "file:./frontend.js",
+	"render": "file:./render.php"
+}
