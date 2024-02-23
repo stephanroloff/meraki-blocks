@@ -1,59 +1,32 @@
 import { __ } from '@wordpress/i18n';
-import {
-	useBlockProps,
-	InspectorControls,
-} from '@wordpress/block-editor';
-import {
-	PanelBody,
-	PanelRow,
-	__experimentalNumberControl as NumberControl,
-	ToggleControl
-} from '@wordpress/components';
+import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
+import { PanelBody } from '@wordpress/components';
 import './editor.scss';
 import ServerSideRender from '@wordpress/server-side-render';
-import metadata from './block.json';
+import metadata from './block.json';	
+import MyToggleControl from '../components/MyToggleControl';
+import MyNumberControl from '../components/MyNumberControl';
 
 export default function Edit(props) {
-	const { attributes, setAttributes } = props;
-	const { amountSelected, overlayHover } = attributes;
+	const { attributes } = props;
 
 	return (
 		<div {...useBlockProps()}>
 			<InspectorControls>
 				<PanelBody>
-					<PanelRow>
-						<h2>Masonry Feed</h2>                                            {/***/}
-					</PanelRow>
-					<PanelRow>
-						<NumberControl
-							label={'Number of Pictures'}                                       //***
-							min={0}
-							onChange={value => setAttributes({ amountSelected: value })}
-							value={amountSelected || 0}
-						/>
-					</PanelRow>
-					<PanelRow>
-						<ToggleControl
-							label="Overlay Hover"
-							help={
-								overlayHover
-									? 'Has overlay hover effect.'
-									: 'No overlay hover effect.'
-							}
-							checked={overlayHover}
-							onChange={value => setAttributes({ overlayHover: value })}
-
-						/>
-					</PanelRow>
+					<MyNumberControl name={'Number of pictures'} attrName={'amountSelected'} min ={0} properties={props} />
+					<MyToggleControl name={'Overlay Hover'}  attrName={'overlayHover'}properties={props}/>
+					<MyNumberControl name={'Image min width (px)'} attrName={'imageMinWidth'} min ={0} properties={props} />
 				</PanelBody>
 			</InspectorControls>
 
 			<ServerSideRender
-				block={metadata.name}
-				attributes={{
-					amountSelected: attributes.amountSelected,
-					overlayHover: attributes.overlayHover,
-				}}
+			block={metadata.name}
+			attributes={{
+				amountSelected: attributes.amountSelected,
+				overlayHover: attributes.overlayHover,
+				imageMinWidth: attributes.imageMinWidth
+			}}
 			/>
 		</div>
 	);

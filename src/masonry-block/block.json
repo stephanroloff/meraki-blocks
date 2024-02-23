@@ -7,14 +7,21 @@
 	"category": "merakistarter",
 	"description": "Masonry Block",
 	"supports": {
-		"html": false
+		"html": false,
+		"align": true
 	},
 	"attributes": {
 		"amountSelected": {
-			"type": "string"
+			"type": "string",
+			"default": "3"
 		},
 		"overlayHover": {
-			"type": "boolean"
+			"type": "boolean",
+			"default": false
+		},
+		"imageMinWidth": {
+			"type": "string",
+			"default": "300"
 		}
 	},
 	"textdomain": "gutenpride",

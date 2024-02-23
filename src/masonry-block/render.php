@@ -19,13 +19,17 @@ $overlayHover = $attributes['overlayHover'];
 //convert 
 $amountSelected_number = (int)$attributes['amountSelected']; 
 
+
 if(!$galleries){
-    $galleries=[];
+   echo '<div class="masonry-editor">';
+   echo 'No images added. Please add some images in order to see the masonry gallery';
+   echo '</div>';
+   return;
 }
 
 ?>
 <div <?php echo $wrapper_attributes?>>
-    <main class="masonry-grid">
+    <main class="masonry-grid" style="grid-template-columns: repeat(auto-fill, minmax(<?= $attributes['imageMinWidth'];?>px, 1fr));">
 
             <?php  
             foreach($galleries as $image){
