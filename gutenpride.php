@@ -23,5 +23,6 @@
 
 define('MY_PLUGIN_PATH_CUSTOM_BLOCKS',plugin_dir_url(__FILE__));
 
-require_once(__DIR__ . '/register_blocks.php');  
+require_once(__DIR__ . '/inc/register-blocks.php');  
+require_once(__DIR__ . '/inc/register-block-category.php');  
 
