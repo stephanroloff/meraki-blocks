@@ -1,0 +1,158 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-create-block-desktop-mobile-block.frontend-view{
+    max-width: 100%;
+
+    .desktop-layout{
+        display: block;
+    }
+    .mobile-layout{
+        display: none;
+    }
+
+    &.breakpoint-200{
+        @media(max-width: 200px){
+            .desktop-layout{
+                display: none;
+            }
+            .mobile-layout{
+                display: block;
+            }
+        }
+    }
+    &.breakpoint-300{
+        @media(max-width: 300px){
+            .desktop-layout{
+                display: none;
+            }
+            .mobile-layout{
+                display: block;
+            }
+        }
+    }
+    &.breakpoint-400{
+        @media(max-width: 400px){
+            .desktop-layout{
+                display: none;
+            }
+            .mobile-layout{
+                display: block;
+            }
+        }
+    }
+    &.breakpoint-500{
+        @media(max-width: 500px){
+            .desktop-layout{
+                display: none;
+            }
+            .mobile-layout{
+                display: block;
+            }
+        }
+    }
+    &.breakpoint-600{
+        @media(max-width: 600px){
+            .desktop-layout{
+                display: none;
+            }
+            .mobile-layout{
+                display: block;
+            }
+        }
+    }
+    &.breakpoint-700{
+        @media(max-width: 700px){
+            .desktop-layout{
+                display: none;
+            }
+            .mobile-layout{
+                display: block;
+            }
+        }
+    }
+    &.breakpoint-800{
+        @media(max-width: 800px){
+            .desktop-layout{
+                display: none;
+            }
+            .mobile-layout{
+                display: block;
+            }
+        }
+    }
+    &.breakpoint-900{
+        @media(max-width: 900px){
+            .desktop-layout{
+                display: none;
+            }
+            .mobile-layout{
+                display: block;
+            }
+        }
+    }
+    &.breakpoint-1000{
+        @media(max-width: 1000px){
+            .desktop-layout{
+                display: none;
+            }
+            .mobile-layout{
+                display: block;
+            }
+        }
+    }
+    &.breakpoint-1100{
+        @media(max-width: 1100px){
+            .desktop-layout{
+                display: none;
+            }
+            .mobile-layout{
+                display: block;
+            }
+        }
+    }
+    &.breakpoint-1200{
+        @media(max-width: 1200px){
+            .desktop-layout{
+                display: none;
+            }
+            .mobile-layout{
+                display: block;
+            }
+        }
+    }
+    &.breakpoint-1300{
+        @media(max-width: 1300px){
+            .desktop-layout{
+                display: none;
+            }
+            .mobile-layout{
+                display: block;
+            }
+        }
+    }
+    &.breakpoint-1400{
+        @media(max-width: 1400px){
+            .desktop-layout{
+                display: none;
+            }
+            .mobile-layout{
+                display: block;
+            }
+        }
+    }
+    &.breakpoint-1500{
+        @media(max-width: 1500px){
+            .desktop-layout{
+                display: none;
+            }
+            .mobile-layout{
+                display: block;
+            }
+        }
+    }
+}

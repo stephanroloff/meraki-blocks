@@ -20,6 +20,8 @@ function create_blocks() {
     register_block_type( dirname(dirname(__FILE__)) . '/build/emerging-text-block');
     register_block_type( dirname(dirname(__FILE__)) . '/build/loader-block');
     register_block_type( dirname(dirname(__FILE__)) . '/build/modal-block');
+    register_block_type( dirname(dirname(__FILE__)) . '/build/desktop-mobile-block');
+    
         
 }
 
