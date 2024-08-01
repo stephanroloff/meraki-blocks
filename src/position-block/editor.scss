@@ -8,3 +8,6 @@
 	margin: 0 !important;
 	width: 100% !important;
 }
+body .editor-styles-wrapper .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+	margin: 0 !important;
+}

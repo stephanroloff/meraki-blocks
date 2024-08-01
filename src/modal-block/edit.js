@@ -7,7 +7,7 @@ import MyNumberControl from '../components/MyNumberControl';
 import MySelectControl from '../components/MySelectControl';
 
 export default function Edit(props) {
-	let {editModeActive} = props.attributes
+	let {editModeActive, width, height} = props.attributes
 
 	const MY_TEMPLATE = [
 		['core/group'],
@@ -39,9 +39,13 @@ export default function Edit(props) {
 				<p>MODAL BLOCK</p>
 			</div>
 			):(
-				<InnerBlocks
-					template={MY_TEMPLATE}
-				/>
+				<div className='modal-container' style={{ width: `${width}px`, height: `${height}px` }}>
+					<div className='modal-content'>
+						<InnerBlocks
+							template={MY_TEMPLATE}
+						/>
+					</div>
+				</div>
 			)}						
 
 		</div>
