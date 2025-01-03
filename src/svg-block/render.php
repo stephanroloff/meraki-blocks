@@ -10,15 +10,11 @@
  * @var array    $context            Block context.
  */
 
-$wrapper_attributes = get_block_wrapper_attributes(
-    [
-		'class' => 'custom-class-frontend',
-	]
-);
+$wrapper_attributes = get_block_wrapper_attributes();
 
 ?>
 <div <?php echo $wrapper_attributes?>>
-    <?php echo $content?>
+    <?php echo $attributes['svgcode']?>
 </div>
     
 

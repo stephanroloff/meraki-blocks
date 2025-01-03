@@ -1,19 +1,19 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
-	"name": "create-block/custom-field-block",
+	"name": "create-block/svg-block",
 	"version": "0.1.0",
-	"title": "Custom Field Block",
-	"category": "widgets",
+	"title": "SVG Block",
+	"category": "werbeagenten",
 	"icon": "smiley",
-	"description": "custom-field-block",
+	"description": "SVG Block",
 	"supports": {
-		"align": true
+		"html": false
 	},
 	"attributes": {
-		"customFieldName": {
+		"svgcode": {
 			"type": "string",
-			"default": ""
+			"default": "svgcode"
 		}
 	},
 	"textdomain": "gutenpride",

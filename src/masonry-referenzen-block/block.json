@@ -1,30 +1,19 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
-	"name": "create-block/team-grid-member-block",
+	"name": "create-block/masonry-referenzen-block",
 	"version": "0.1.0",
-	"title": "Team-grid-member-block",
-	"category": "merakistarter",
-	"description": "Team-grid-member-block",
-	"icon": "admin-users",
+	"title": "Masonry Referenzen Block",
+	"category": "werbeagenten",
+	"icon": "smiley",
+	"description": "Masonry Referenzen Block",
 	"supports": {
 		"html": false
 	},
 	"attributes": {
-		"titleTeamMember1": {
+		"amountSelected": {
 			"type": "string",
-			"default": "Title Team Member 1"
-		},
-		"mediaURL1": {
-			"type": "string",
-			"default": ""
-		},
-		"mediaID1": {
-			"type": "number"
-		},
-		"mediaAlt1": {
-			"type": "string",
-			"default": ""
+			"default": "Steph"
 		}
 	},
 	"textdomain": "gutenpride",

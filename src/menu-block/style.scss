@@ -1,0 +1,120 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+
+
+.wp-block-create-block-menu-block{
+	.menu-desktop{
+		// @media(max-width: $breakpoint){
+		// 	display: none !important;
+		// }
+		ul{
+			display: flex;
+			list-style: none;
+			padding: 0;
+
+			li{
+				margin-right: 20px;
+				a{
+					text-decoration: none;
+					&:hover{
+						text-decoration: underline;
+						text-underline-offset: 3px;
+					}
+				}
+			}
+		}
+	}
+
+	.menu-mobile {
+		ul{
+			list-style: none;
+			padding: 0;
+			li{
+				margin-right: 20px;
+				a{
+					text-decoration: none;	
+				}
+			}
+		}
+		.close-button{
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			width: 30px;
+			height: 30px;
+		}
+	}
+
+	&.frontend-view{ // JUST IN FRONTEND
+		.menu-mobile{
+			display: none !important;
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 10000;
+			width: 100vw;
+			height: 100vh;
+			background-color: #fff;
+
+			&.open{
+				display: flex !important;
+				flex-direction: column;
+				// align-items: center;
+				justify-content: center;
+				ul{
+					
+				}
+			}
+		}
+	}
+
+	&.editor-desktop-view{
+		.menu-mobile{
+			display: none;
+		}
+	}
+
+	&.editor-mobile-view{
+		.menu-desktop{
+			display: none;
+		}
+	}
+
+	.menu-icon{
+		display: none;
+		margin: 0;
+		// @media(max-width: $breakpoint){
+		// 	display: block;
+		// }
+		img{
+			background-color: #000;
+		}
+	}
+}
+
+
+$breakpoints: 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200;
+
+.wp-block-create-block-menu-block {
+  @each $bp in $breakpoints {
+    &.breakpoint-#{$bp} {
+      .menu-desktop {
+        @media (max-width: #{$bp}px) {
+          display: none !important;
+        }
+      }
+
+      .menu-icon {
+        @media (max-width: #{$bp}px) {
+          display: flex !important;
+		  justify-content: end;
+        }
+      }
+    }
+  }
+}

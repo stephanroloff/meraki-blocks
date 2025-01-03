@@ -1,18 +1,23 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
-	"name": "create-block/team-grid-block",
+	"name": "create-block/menu-block",
 	"version": "0.1.0",
-	"title": "Team-grid-block",
-	"category": "merakistarter",
-	"description": "Team-grid-block",
+	"title": "Menu Block",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Menu Block",
 	"supports": {
 		"html": false
 	},
 	"attributes": {
-		"amountSelected": {
+		"layoutType": {
 			"type": "string",
-			"default": "Steph"
+			"default": "desktop-view"
+		},
+		"breakpointWidth": {
+			"type": "string",
+			"default": "500"
 		}
 	},
 	"textdomain": "gutenpride",

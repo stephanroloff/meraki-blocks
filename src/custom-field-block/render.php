@@ -10,8 +10,7 @@
  * @var array    $context            Block context.
  */
 
-
-$field_name = 'referenzen_subtitle';
+$field_name = $attributes['customFieldName'];
 
 $wrapper_attributes = get_block_wrapper_attributes();
 

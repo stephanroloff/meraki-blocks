@@ -1,0 +1,25 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+ .wp-block-create-block-menu-block{
+	.menu-desktop{
+
+	}
+
+	.menu-mobile{
+		position: relative !important;
+		width: 400px;
+		height: 550px;
+		border: 2px solid black;
+		margin: 0 auto;
+		border: 3px solid green;
+
+	}
+
+	.menu-icon{
+		display: none;
+	}
+}

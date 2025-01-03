@@ -1,19 +1,19 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
-	"name": "create-block/custom-field-block",
+	"name": "create-block/weitere-referenzen-block",
 	"version": "0.1.0",
-	"title": "Custom Field Block",
+	"title": "Weitere Referenzen Block", 
 	"category": "widgets",
 	"icon": "smiley",
-	"description": "custom-field-block",
+	"description": "Dynamic Block Example",
 	"supports": {
-		"align": true
+		"html": false
 	},
 	"attributes": {
-		"customFieldName": {
+		"amountSelected": {
 			"type": "string",
-			"default": ""
+			"default": "Steph"
 		}
 	},
 	"textdomain": "gutenpride",

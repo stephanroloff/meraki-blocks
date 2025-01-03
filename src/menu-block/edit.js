@@ -1,24 +1,35 @@
 import { __ } from '@wordpress/i18n';
 import { InnerBlocks, useBlockProps, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody } from '@wordpress/components';
-import './editor.scss';
 import MySelectControl from '../components/MySelectControl';
+import menuIcon from './burger-menu.svg';
+import closeButton from './close-button.svg';
+import './editor.scss';
+
 
 export default function Edit(props) {
-
+	let { attributes } = props;
+	
 	const MY_TEMPLATE = [
-		['core/group', { className: 'desktop-layout' }],
-		['core/group', { className: 'mobile-layout' }]
+		['core/group', { className: 'menu-desktop' }, [
+			['core/list', { className: 'links-list' }, [
+				['core/list-item', { content: 'Link Item 1' }],
+				['core/list-item', { content: 'Link Item 2' }],
+			]],
+		]],
+		['core/group', { className: 'menu-mobile' }, [
+			['core/image', { className: 'close-button', url: closeButton, alt:'close-button'}],
+			['core/list', { className: 'links-list' }, [
+				['core/list-item', { content: 'Link Item 1' }],
+				['core/list-item', { content: 'Link Item 2' }],
+			]],
+		]],
+		['core/image', { className: 'menu-icon', url: menuIcon, alt:'menu-icon'}]
 	];
 
 	let modalSelectOptions = [
 		{ value: 'desktop-view', label: 'Desktop view' },
 		{ value: 'mobile-view', label: 'Mobile view' },
-	];
-
-	let renderTypeOptions = [
-		{ value: 'server-side-render', label: 'Server Side Render' },
-		{ value: 'client-side-render', label: 'Client Side Render' },
 	];
 
 	let breakpointWidthOptions = [
@@ -37,37 +48,22 @@ export default function Edit(props) {
 		{ value: '1400', label: '1400' },
 		{ value: '1500', label: '1500' },
 	]
+	
 
 	return (
-		<div {...useBlockProps({
-			className: `${props.attributes.layoutType}`
-		})}>
+		<div {...useBlockProps({className: `editor-${attributes.layoutType}`})}>
 			<InspectorControls>
 					<PanelBody>
 						<MySelectControl label={'Select Layout Type'} attrName={'layoutType'} properties={props} options={modalSelectOptions}/>
-
-						{ props.attributes.layoutType === 'mobile-view'? (
-							<>
-								<MySelectControl label={'Select Render Type'} attrName={'renderType'} properties={props} options={renderTypeOptions}/>
-
-								{ props.attributes.renderType === 'client-side-render'? (
-									<>	
-										<MySelectControl label={'Breakpoint width (px)'} attrName={'breakpointWidth'} properties={props} options={breakpointWidthOptions}/>
-										<p>min-width: 200px</p>
-									</>
-									):('')
-								}								
-							</>
-							):('')
-						}
+						<div style={{marginTop: '20px'}}></div>	
+						<MySelectControl label={'Breakpoint width(px) for icon change'} attrName={'breakpointWidth'} properties={props} options={breakpointWidthOptions}/>
 					</PanelBody>
+
 			</InspectorControls>
 
-			<div className='breakpoint-mobile' style={{ width: `${props.attributes.layoutType === 'mobile-view'? props.attributes.breakpointWidth + 'px' : '100%'}` }}>
-				<InnerBlocks
-					template={MY_TEMPLATE}
-				/>
-			</div>
+			<InnerBlocks
+				template={MY_TEMPLATE}
+			/>
 		</div>
 	);
 }
