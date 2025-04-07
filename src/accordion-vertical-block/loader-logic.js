@@ -6,5 +6,5 @@ export function accordionVerticalLoaderLogik(element){
         loader.style.display = 'none';
         accordionContainer.style.display = 'flex';
     
-    }, 10000);
+    }, 1000);
 }
