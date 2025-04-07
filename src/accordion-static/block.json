@@ -4,7 +4,7 @@
 	"name": "create-block/accordion-static-block",
 	"version": "0.1.0",
 	"title": "Accordion Static Block",
-	"category": "merakistarter",
+	"category": "custom-gutenberg-blocks",
 	"description": "Accordion Static Block",
 	"supports": {
 		"align": true

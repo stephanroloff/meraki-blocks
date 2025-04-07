@@ -4,7 +4,7 @@
 	"name": "create-block/text-fill-block",
 	"version": "0.1.0",
 	"title": "Text-Fill-block",
-	"category": "merakistarter",
+	"category": "custom-gutenberg-blocks",
 	"description": "This block contains 2 Headings, the first one is in front and the second one is behind. The headings must have different font colors.",
 	"supports": {
 		"html": false,

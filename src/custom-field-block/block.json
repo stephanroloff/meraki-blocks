@@ -4,7 +4,7 @@
 	"name": "create-block/custom-field-block",
 	"version": "0.1.0",
 	"title": "Custom Field Block",
-	"category": "widgets",
+	"category": "custom-gutenberg-blocks",
 	"icon": "smiley",
 	"description": "custom-field-block",
 	"supports": {

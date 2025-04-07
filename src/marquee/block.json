@@ -4,7 +4,7 @@
 	"name": "create-block/marquee-block",
 	"version": "0.1.0",
 	"title": "Marquee Block",
-	"category": "widgets",
+	"category": "custom-gutenberg-blocks",
 	"description": "Marquee Block",
 	"icon": "editor-textcolor",
 	"supports": {

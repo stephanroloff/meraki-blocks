@@ -4,7 +4,7 @@
 	"name": "create-block/nested-dynamic-block",
 	"version": "0.1.0",
 	"title": "Nested dynamic Block Example",
-	"category": "widgets",
+	"category": "custom-gutenberg-blocks",
 	"icon": "smiley",
 	"description": "Nested dynamic Block Example",
 	"supports": {

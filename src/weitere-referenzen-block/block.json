@@ -4,7 +4,7 @@
 	"name": "create-block/weitere-referenzen-block",
 	"version": "0.1.0",
 	"title": "Weitere Referenzen Block", 
-	"category": "widgets",
+	"category": "custom-gutenberg-blocks",
 	"icon": "smiley",
 	"description": "Dynamic Block Example",
 	"supports": {

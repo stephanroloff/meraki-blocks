@@ -4,7 +4,7 @@
 	"name": "create-block/masonry-referenzen-block",
 	"version": "0.1.0",
 	"title": "Masonry Referenzen Block",
-	"category": "werbeagenten",
+	"category": "custom-gutenberg-blocks",
 	"icon": "smiley",
 	"description": "Masonry Referenzen Block",
 	"supports": {

@@ -4,7 +4,7 @@
 	"name": "create-block/emerging-text-block",
 	"version": "0.1.0",
 	"title": "Emerging Text Block",
-	"category": "merakistarter",
+	"category": "custom-gutenberg-blocks",
 	"icon": "arrow-up-alt",
 	"description": "Emerging Text Block",
 	"supports": {

@@ -4,7 +4,7 @@
 	"name": "create-block/accordion-vertical",
 	"version": "0.1.0",
 	"title": "Accordion Vertical Block",
-	"category": "merakistarter",
+	"category": "custom-gutenberg-blocks",
 	"description": "Accordion Vertical Block",
 	"supports": {
 		"html": false

@@ -4,7 +4,7 @@
 	"name": "create-block/loader-block",
 	"version": "0.1.0",
 	"title": "Loader Block",
-	"category": "widgets",
+	"category": "custom-gutenberg-blocks",
 	"icon": "update",
 	"description": "You can only see how this Block works on the Frontend",
 	"supports": {

@@ -4,7 +4,7 @@
 	"name": "create-block/desktop-mobile-block",
 	"version": "0.1.0",
 	"title": "Desktop Mobile Block",
-	"category": "werbeagenten",
+	"category": "custom-gutenberg-blocks",
 	"icon": "smiley",
 	"description": "2 Blocks in one, create layouts for Desktop and for Mobile.",
 	"supports": {

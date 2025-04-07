@@ -4,7 +4,7 @@
 	"name": "create-block/modal-block",
 	"version": "0.1.0",
 	"title": "Modal Block",
-	"category": "widgets",
+	"category": "custom-gutenberg-blocks",
 	"icon": "smiley",
 	"description": "Modal Block",
 	"supports": {

@@ -4,7 +4,7 @@
 	"name": "create-block/carousel-block",
 	"version": "0.1.0",
 	"title": "Carousel Block",
-	"category": "merakistarter",
+	"category": "custom-gutenberg-blocks",
 	"description": "Carousel Block",
 	"supports": {
 		"html": false,

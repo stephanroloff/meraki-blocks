@@ -4,7 +4,7 @@
 	"name": "create-block/carousel-slide-block",
 	"version": "0.1.0",
 	"title": "Carousel Slide Block",
-	"category": "merakistarter",
+	"category": "custom-gutenberg-blocks",
 	"description": "Carousel Slide Block",
 	"supports": {
 		"html": false

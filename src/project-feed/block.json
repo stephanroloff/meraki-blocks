@@ -4,7 +4,7 @@
 	"name": "create-block/project-feed-block",
 	"version": "0.1.0",
 	"title": "Project Feed Block",
-	"category": "merakistarter",
+	"category": "custom-gutenberg-blocks",
 	"description": "Project Feed Block",
 	"supports": {
 		"html": false

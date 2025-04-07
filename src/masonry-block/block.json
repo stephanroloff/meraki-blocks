@@ -4,7 +4,7 @@
 	"name": "create-block/masonry-block",
 	"version": "0.1.0",
 	"title": "Masonry Block",
-	"category": "merakistarter",
+	"category": "custom-gutenberg-blocks",
 	"description": "Masonry Block",
 	"supports": {
 		"html": false,

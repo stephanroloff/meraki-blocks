@@ -2,8 +2,8 @@
 function register_layout_category( $categories ) {
 	
 	$categories[] = array(
-		'slug'  => 'merakistarter',
-		'title' => 'Meraki Starter Blocks'
+		'slug'  => 'custom-gutenberg-blocks',
+		'title' => 'Custom Gutenberg Blocks'
 	);
 
 	return $categories;

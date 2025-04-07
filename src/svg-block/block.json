@@ -4,7 +4,7 @@
 	"name": "create-block/svg-block",
 	"version": "0.1.0",
 	"title": "SVG Block",
-	"category": "werbeagenten",
+	"category": "custom-gutenberg-blocks",
 	"icon": "smiley",
 	"description": "SVG Block",
 	"supports": {
