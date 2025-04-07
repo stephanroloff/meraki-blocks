@@ -4,16 +4,16 @@
 	"name": "create-block/weitere-referenzen-block",
 	"version": "0.1.0",
 	"title": "Weitere Referenzen Block", 
-	"category": "custom-gutenberg-blocks",
+	"category": "widgets",
 	"icon": "smiley",
 	"description": "Dynamic Block Example",
 	"supports": {
 		"html": false
 	},
 	"attributes": {
-		"amountSelected": {
+		"postType": {
 			"type": "string",
-			"default": "Steph"
+			"default": "post"
 		}
 	},
 	"textdomain": "gutenpride",

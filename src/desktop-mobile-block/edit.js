@@ -3,24 +3,15 @@ import { InnerBlocks, useBlockProps, InspectorControls } from '@wordpress/block-
 import { PanelBody } from '@wordpress/components';
 import './editor.scss';
 import MySelectControl from '../components/MySelectControl';
-
 export default function Edit(props) {
-
 	const MY_TEMPLATE = [
 		['core/group', { className: 'desktop-layout' }],
 		['core/group', { className: 'mobile-layout' }]
 	];
-
 	let modalSelectOptions = [
 		{ value: 'desktop-view', label: 'Desktop view' },
 		{ value: 'mobile-view', label: 'Mobile view' },
 	];
-
-	let renderTypeOptions = [
-		{ value: 'server-side-render', label: 'Server Side Render' },
-		{ value: 'client-side-render', label: 'Client Side Render' },
-	];
-
 	let breakpointWidthOptions = [
 		{ value: '200', label: '200' },
 		{ value: '300', label: '300' },
@@ -37,7 +28,6 @@ export default function Edit(props) {
 		{ value: '1400', label: '1400' },
 		{ value: '1500', label: '1500' },
 	]
-
 	return (
 		<div {...useBlockProps({
 			className: `${props.attributes.layoutType}`
@@ -45,24 +35,15 @@ export default function Edit(props) {
 			<InspectorControls>
 					<PanelBody>
 						<MySelectControl label={'Select Layout Type'} attrName={'layoutType'} properties={props} options={modalSelectOptions}/>
-
 						{ props.attributes.layoutType === 'mobile-view'? (
 							<>
-								<MySelectControl label={'Select Render Type'} attrName={'renderType'} properties={props} options={renderTypeOptions}/>
-
-								{ props.attributes.renderType === 'client-side-render'? (
-									<>	
-										<MySelectControl label={'Breakpoint width (px)'} attrName={'breakpointWidth'} properties={props} options={breakpointWidthOptions}/>
-										<p>min-width: 200px</p>
-									</>
-									):('')
-								}								
+								<MySelectControl label={'Breakpoint width (px)'} attrName={'breakpointWidth'} properties={props} options={breakpointWidthOptions}/>
+								<p>min-width: 200px</p>
 							</>
 							):('')
 						}
 					</PanelBody>
 			</InspectorControls>
-
 			<div className='breakpoint-mobile' style={{ width: `${props.attributes.layoutType === 'mobile-view'? props.attributes.breakpointWidth + 'px' : '100%'}` }}>
 				<InnerBlocks
 					template={MY_TEMPLATE}

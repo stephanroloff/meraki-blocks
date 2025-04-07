@@ -13,9 +13,10 @@
 $wrapper_attributes = get_block_wrapper_attributes();
 
 $post_id = get_the_ID();
+$post_type = $attributes['postType'];
 
 $query = new WP_Query(array(
-    'post_type'      => 'referenzen',
+    'post_type'      => $post_type,
     'posts_per_page' => 3, 
     'orderby'        => 'rand', //random
     'post__not_in'   => array($post_id),
@@ -33,8 +34,20 @@ $query = new WP_Query(array(
             ?>
             <div class="column">
                 <a href="<?= get_permalink(); ?>">
-                    <?= get_the_post_thumbnail(); ?>
-                    <p><?= get_the_title(); ?></p>
+                    <div class="img-wrapper">
+                        <?php if (has_post_thumbnail()): ?>
+                            <?= get_the_post_thumbnail(); ?>
+                        <?php else: ?>
+                            <div class="img-placeholder">
+                                <p>Post without a thumbnail image <br> Please add one</p>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                    <div class="info-wrapper">
+                        <div class="blue-line"></div>
+                        <p class="title"><?= get_the_title(); ?></p>
+                        <p class="excerpt"><?= wp_trim_words(get_the_excerpt(), 20, '...'); ?></p>
+                    </div>
                 </a>
             </div>
             <?php

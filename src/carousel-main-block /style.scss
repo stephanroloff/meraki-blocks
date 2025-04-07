@@ -1,0 +1,53 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ */
+
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+@import 'swiper/css/effect-fade';
+
+.wp-block-create-block-carousel-main-block{
+	height: auto !important;
+	width: 100% !important;
+	max-width: 100% !important;
+	&.swiper {
+		.swiper-wrapper {
+	
+			.slide {
+				width: 100%;
+	
+				.slide_intern {}
+			}
+		}
+	
+		.swiper-pagination {
+			top: 0;
+			left: 0;
+			width: auto;
+			margin-top: 10px;
+			margin-left: 10px;
+
+			.swiper-pagination-bullet {
+				background-color: #9d9ea0;
+				width: 16px;
+				height: 5px;
+				border-radius: 5px;
+				&-active {
+					width: 60px;
+				}
+			}
+		}
+	
+		.swiper-button-prev {
+			color: #9d9ea0;
+		}
+	
+		.swiper-button-next {
+			color: #9d9ea0;
+		}
+	
+		@media(max-width: 700px) {}
+	}
+}

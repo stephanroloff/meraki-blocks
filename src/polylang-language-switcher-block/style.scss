@@ -1,0 +1,78 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ */
+
+ $font-family: var(--wp--preset--font-family--open-sans);
+
+.wp-block-create-block-polylang-language-switcher-block{
+    
+    .polylang_langswitcher-wrapper {
+        position: relative;
+        display: inline-block;
+    
+        &:hover,
+        &:focus-within{
+            .polylang_langswitcher {
+                display: block !important;
+            }
+        }
+
+        .dropdown-btn {
+            background-color: white;
+            color: black;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-family:  $font-family;
+            display: flex;
+            align-items: center;
+
+            .flag-container {
+                margin-right: 5px;
+                margin-top: 5px;
+            }
+        }
+        
+        .polylang_langswitcher {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            top: 102%;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            display: none; /* Inicialmente oculto */
+            z-index: 1000;
+
+            li{
+                padding: 8px;
+                text-align: left;
+                a{
+                    font-family:  $font-family;
+                    text-decoration: none;
+                    color: #333;
+                    display: flex;
+                    align-items: center;
+
+                    .flag-container {
+                        margin-right: 5px;
+                        margin-top: 3px;
+                    }
+                }
+
+                &:hover,
+                &:focus-within {
+                    background-color: #1650c3;
+                    outline: none; /* Deshabilitar el contorno predeterminado del navegador */   
+                    a{
+                        color: white;
+                    }   
+                }
+            }
+        }
+    }
+}

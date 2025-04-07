@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "create-block/tabs-block",
+	"version": "0.1.0",
+	"title": "Tabs Block",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Tabs Block",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"tabColumns": {
+			"type": "boolean",
+			"default": false
+		},
+		"editModeActive": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"textdomain": "gutenpride",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"script": "file:./script.js",
+	"viewScript": "file:./frontend.js",
+	"render": "file:./render.php"
+}

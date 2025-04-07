@@ -4,17 +4,15 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
-
-.wp-block-create-block-desktop-mobile-block.frontend-view{
+ .wp-block-create-block-desktop-mobile-block.frontend-view{
     max-width: 100%;
-
     .desktop-layout{
-        display: block;
+        // display: block;
+        position: static;  // Esto es experimental si hay problemas borrarlo!
     }
     .mobile-layout{
         display: none;
     }
-
     &.breakpoint-200{
         @media(max-width: 200px){
             .desktop-layout{

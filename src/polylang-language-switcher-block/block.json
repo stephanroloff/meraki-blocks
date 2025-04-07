@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "create-block/polylang-language-switcher-block",
+	"version": "0.1.0",
+	"title": "Polylang Language Switcher Block",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Polylang Language Switcher Block, it works just if the Plugin Polylang is installed.",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"amountSelected": {
+			"type": "string",
+			"default": "Steph"
+		}
+	},
+	"textdomain": "gutenpride",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"script": "file:./script.js",
+	"viewScript": "file:./frontend.js",
+	"render": "file:./render.php"
+}

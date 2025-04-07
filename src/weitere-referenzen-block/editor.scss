@@ -2,4 +2,9 @@
  * The following styles get applied inside the editor only.
  */
 
-.wp-block-create-block-dynamic-block {}
+.wp-block-create-block-weitere-referenzen-block {
+    &.block-editor-block-list__block a {
+        pointer-events: none;
+        cursor: default;
+    }
+}

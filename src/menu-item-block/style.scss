@@ -1,0 +1,39 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-create-block-menu-item-block {
+	list-style: none;
+	p{
+		a{
+			color: black;
+			text-transform: none;
+			text-decoration: none;
+			text-decoration-thickness: 2px;
+			text-underline-offset: 4px;
+
+			&::after{
+				content: '';
+				width: 0 !important;
+				height: 0 !important;
+				margin-left: 0;
+			}
+			&:hover {
+				text-underline-offset: 4px;
+
+				&::after {
+					margin-left: 0px;
+				}
+			}
+
+			&.active{
+				text-decoration: underline;
+				text-decoration-color: var(--wp--preset--color--custom-gr-n);
+			}
+		}
+	}
+	.sub-menu-intern{}
+}

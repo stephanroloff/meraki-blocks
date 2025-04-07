@@ -1,0 +1,48 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-create-block-tabs-block {
+	&.tab-columns{
+		display: grid;
+		grid-template-columns: 1fr 3fr;
+		gap: 20px;
+	}
+	&.tab-rows{
+		.list-tabs-titles{
+			display: flex;
+			flex-direction: row;
+			gap: 20px;
+			margin-bottom: 10px;
+		}
+	}
+	.list-tabs-titles{
+		display: flex;
+		flex-direction: column;
+		padding: 20px;
+		border: 1px solid black;
+		.single-tab-title{
+			margin: 20px 0;
+
+			&.active{
+				font-weight: bold;
+			}
+		}
+	}
+	
+	.tab-content{
+		padding: 20px;
+		border: 1px solid black;
+
+		.single-tab-container{
+			display: none;
+
+			&.active{
+				display: block;
+			}
+		}
+	}
+}

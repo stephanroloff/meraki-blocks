@@ -1,0 +1,11 @@
+/**
+ * The following styles get applied inside the editor only.
+ */
+
+.wp-block-create-block-query-loop-advanced{
+
+    &.block-editor-block-list__block a {
+        pointer-events: none;
+        cursor: default;
+    }
+}

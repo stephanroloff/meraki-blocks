@@ -1,0 +1,99 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "create-block/carousel-dynamisch",
+	"version": "0.1.0",
+	"title": "Carousel Dynamisch",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "For the carousel to works properly, there must be at least twice as many images in the gallery as the number of 'slidesPerView'.",
+	"supports": {
+		"html": false,
+		"align": true
+	},
+	"attributes": {
+		"autoplay": {
+			"type": "boolean",
+			"default": false
+		},
+		"delay": {
+			"type": "string",
+			"default": "2000"
+		},
+		"speed": {
+			"type": "string",
+			"default": "1000"
+		},
+		"showBullets": {
+			"type": "boolean",
+			"default": false
+		},
+		"showArrows": {
+			"type": "boolean",
+			"default": false
+		},
+		"effect": {
+			"type": "string",
+			"default": "slide"
+		},
+		"vertical": {
+			"type": "boolean",
+			"default": false
+		},
+		"editModeActive": {
+			"type": "boolean",
+			"default": false
+		},
+		"maxHeight": {
+			"type": "string",
+			"default": "300"
+		},
+		"amountBreakpoints": {
+			"type": "string",
+			"default": "1"
+		},
+		"breakpoint1": {
+			"type": "string",
+			"default": "300"
+		},
+		"breakpoint2": {
+			"type": "string",
+			"default": "400"
+		},
+		"breakpoint3": {
+			"type": "string",
+			"default": "500"
+		},
+		"breakpoint4": {
+			"type": "string",
+			"default": "600"
+		},
+		"breakpoint5": {
+			"type": "string",
+			"default": "700"
+		},
+		"breakpoint6": {
+			"type": "string",
+			"default": "800"
+		},
+		"type": {
+			"type": "string",
+			"default": "static"
+		},
+		"fotosUrl": {
+			"type": "array",
+			"default": []
+		},
+		"postType": {
+			"type": "string",
+			"default": "post"
+		}
+	},
+	"textdomain": "gutenpride",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"script": "file:./script.js",
+	"viewScript": "file:./frontend.js",
+	"render": "file:./render.php"
+}

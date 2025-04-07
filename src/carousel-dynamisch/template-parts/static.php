@@ -1,0 +1,1 @@
+<img class="carousel-img" src="<?= $value['url']; ?>" alt="Image" style="width: 100%; height:100%; object-fit: cover;">

@@ -1,0 +1,49 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-create-block-menu-mobile-block {
+    position: relative;
+    
+    .burger-image-container{
+        display: none;
+        &.active{
+            display: block;
+        }
+    }
+    .close-image-container{
+        position: fixed;
+        top: 30px; 
+        right: 30px;
+        z-index: 200;
+        display: none;
+        img{
+            width: 30px;
+            height: 30px;
+        }
+
+        &.active{
+            display: block;
+        }
+    }
+    .mobile-list{
+        display: none;
+        padding: 40px;
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #fff;
+        overflow: scroll;
+        margin-top: 0;
+
+        &.active{
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,45 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "create-block/masonry-block-employees",
+	"version": "0.1.0",
+	"title": "Masonry Block Employees",
+	"category": "werbeagenten",
+	"icon": "smiley",
+	"description": "Masonry Block Employees",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"language": {
+			"type": "string",
+			"default": "deutsch"
+		},
+		"columns": {
+			"type": "string",
+			"default": "3"
+		},
+		"breakpoint1": {
+			"type": "string",
+			"default": "480"
+		},
+		"breakpoint2": {
+			"type": "string",
+			"default": "768"
+		},
+		"breakpoint3": {
+			"type": "string",
+			"default": "1024"
+		},"breakpoint4": {
+			"type": "string",
+			"default": "1440"
+		}
+	},
+	"textdomain": "gutenpride",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"script": "file:./script.js",
+	"viewScript": "file:./frontend.js",
+	"render": "file:./render.php"
+}

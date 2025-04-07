@@ -1,0 +1,33 @@
+/**
+ * The following styles get applied inside the editor only.
+ */
+
+.wp-block-create-block-carousel-dynamisch{
+    display: flex;
+    justify-content: center;
+    max-width: 800px;
+    
+    &.alignwide{
+        max-width: 100%;
+    }
+
+    &.alignfull{
+        max-width: 100%;
+        .swiper{
+            max-width: 100%;
+        }
+    }
+
+    .carousel-editor-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-color: #363636;
+        color: darkkhaki;
+        border-radius: 20px;
+        padding: 20px;
+        height: 60px;
+    }
+
+}

@@ -3,29 +3,22 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
-
-.wp-block-create-block-desktop-mobile-block {
-	width: 100% !important;
-	max-width: 100% !important;
-
-
+ .wp-block-create-block-desktop-mobile-block {
+	// width: 100% !important;
+	// max-width: 100% !important;
     &.desktop-view{
-
         .desktop-layout{
             width: 100% !important;
 	        max-width: 100% !important;
         }
-
         .mobile-layout{
             display: none;
         }
         
     }
-
     &.mobile-view{
         display: flex;
         justify-content: center;
-
         .block-editor-block-list__layout{
             .desktop-layout{
                 display: none;
@@ -34,12 +27,10 @@
                 width: 100%;
                 max-width: 100%;
                 background-color: #fff;
-
                 &.block-editor-block-list__block{
                     border: 2px solid #34b734;
                 }
             }
         }
-
     }
 }
