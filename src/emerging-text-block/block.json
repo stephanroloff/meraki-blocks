@@ -13,11 +13,11 @@
 	"attributes": {
 		"animationDuration": {
 			"type": "string",
-			"default": "0"
+			"default": "500"
 		},
 		"animationDelay": {
 			"type": "string",
-			"default": "0"
+			"default": "100"
 		},
 		"textHeight": {
 			"type": "string",

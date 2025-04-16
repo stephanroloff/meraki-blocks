@@ -13,7 +13,7 @@
 	"attributes": {
 		"modalType": {
 			"type": "string",
-			"default": "Button"
+			"default": "button"
 		},
 		"width": {
 			"type": "string",

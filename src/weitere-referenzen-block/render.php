@@ -28,7 +28,7 @@ $query = new WP_Query(array(
 
     <?php
 
-    if ($query->have_posts()) {
+    if ($query->have_posts()):
         while ($query->have_posts()) {
             $query->the_post();
             ?>
@@ -52,10 +52,11 @@ $query = new WP_Query(array(
             </div>
             <?php
         }
-    }
-    wp_reset_postdata();
+        wp_reset_postdata();
+    else:
+        echo 'No Posts available.';
+    endif;
     ?>
-
     </div>
 </div>
 
