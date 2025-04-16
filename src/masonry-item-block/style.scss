@@ -1,0 +1,14 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ */
+
+.wp-block-create-block-masonry-item-block {
+    &.masonry-item *{
+        width: 100%;
+    }
+    
+    .template-part{
+        object-fit: cover;
+    }
+}

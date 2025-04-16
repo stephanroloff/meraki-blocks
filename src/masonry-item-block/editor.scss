@@ -1,0 +1,10 @@
+/**
+ * The following styles get applied inside the editor only.
+ */
+
+.wp-block-create-block-masonry-item-block{
+    &.block-editor-block-list__block a {
+        pointer-events: none;
+        cursor: default;
+    }
+}

@@ -1,7 +1,7 @@
 import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 import { Button } from '@wordpress/components';
 
-function MyGalleryUpload(props) {
+function MyImageUpload(props) {
     let { attributes, setAttributes } = props.properties;
     let { mediaURLAttrName } = props;
 
@@ -57,4 +57,4 @@ function MyGalleryUpload(props) {
     );
 }
 
-export default MyGalleryUpload;
+export default MyImageUpload;

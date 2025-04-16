@@ -1,34 +1,43 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
-	"name": "create-block/masonry-block-referenzen",
+	"name": "create-block/masonry-block",
 	"version": "0.1.0",
-	"title": "Masonry Block Referenzen",
-	"category": "werbeagenten",
+	"title": "Masonry Block",
+	"category": "custom-gutenberg-blocks",
 	"icon": "smiley",
-	"description": "Masonry Block Referenzen",
+	"description": "Masonry Block",
 	"supports": {
 		"html": false
 	},
 	"attributes": {
+		"renderType": {
+			"type": "string",
+			"default": "static"
+		},
+		"postType": {
+			"type": "string",
+			"default": "post"
+		},
 		"columns": {
 			"type": "string",
 			"default": "3"
 		},
-		"breakpoint1": {
+		"breakpointSmall": {
 			"type": "string",
-			"default": "480"
+			"default": "640"
 		},
-		"breakpoint2": {
-			"type": "string",
-			"default": "768"
-		},
-		"breakpoint3": {
+		"breakpointMedium": {
 			"type": "string",
 			"default": "1024"
-		},"breakpoint4": {
+		},
+		"breakpointLarge": {
 			"type": "string",
 			"default": "1440"
+		},
+		"breakpointExtraLarge": {
+			"type": "string",
+			"default": "1920"
 		}
 	},
 	"textdomain": "gutenpride",
