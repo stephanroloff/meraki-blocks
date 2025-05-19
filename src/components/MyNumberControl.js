@@ -19,6 +19,7 @@ function MyNumberControl(props) {
                 value={ attributes[attrName] }
                 // isShiftStepEnabled={ true }
                 // shiftStep={ 1 }
+                step={0.1}
             />		
         </PanelRow>
         </>

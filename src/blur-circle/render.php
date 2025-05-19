@@ -17,15 +17,14 @@ $wrapper_attributes = get_block_wrapper_attributes();
     <div 
     class="blur-circle" 
     style="
-    width:300px; 
-    height:600px; 
-    /* background-color: red; */
-    background: linear-gradient(135deg, #6B003E, #FECDA5);
-    /* background: linear-gradient(135deg, #6B003E, #FE2D2D); */
-    /* background: linear-gradient(135deg, #FE2D2D, #FECDA5); */
+    width:<?= $attributes['width']?>px; 
+    height:<?= $attributes['height']?>px; 
+
+    background: linear-gradient(135deg, <?= $attributes['color1']?>,  <?= $attributes['color2']?>);
+
     border-radius: 50%;
     filter: blur(50px);
-    opacity: 0.7;
+    opacity: <?= $attributes['opacity']?>;
     /* box-shadow: 0 0 160px #FE2D2D; */
     "
     ></div>
