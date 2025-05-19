@@ -12,7 +12,7 @@ import { useState } from 'react';
 
 export default function Edit(props) {
 	let { attributes, setAttributes, isSelected } = props;
-	let { reverse, animationTime } = attributes;
+	let { textStroke, reverse, animationTime } = attributes;
 	const [ editModeMarquee, setEditModeMarquee ] = useState( false );
 
 	function buttonCliked() {
@@ -28,7 +28,7 @@ export default function Edit(props) {
 	];
 
 	return (
-		<div {...useBlockProps()}>
+		<div {...useBlockProps({className: textStroke?'text-stroke':''})}>
 
 			<InspectorControls>
 				<PanelBody>
@@ -53,6 +53,15 @@ export default function Edit(props) {
 							min={0}
 							onChange={value => setAttributes({ animationTime: value })}
 							value={animationTime}
+						/>		
+					</PanelRow>
+					<div style={{height: "20px"}}></div>
+					<p>HEADING STYLE</p>
+					<PanelRow>
+						<ToggleControl
+							label="Text stroke"
+							checked={ textStroke }
+							onChange={value => setAttributes({ textStroke: value })}
 						/>		
 					</PanelRow>
 				</PanelBody>

@@ -10,7 +10,9 @@
  * @var array    $context            Block context.
  */
 
-$wrapper_attributes = get_block_wrapper_attributes();
+$wrapper_attributes = get_block_wrapper_attributes(
+    ['class' => $attributes['textStroke']?'text-stroke':'']
+);
 
 ?>
 <div <?php echo $wrapper_attributes?>>

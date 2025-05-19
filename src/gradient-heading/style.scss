@@ -1,0 +1,28 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-create-block-gradient-heading{
+
+	&.dark{
+		.wp-block-heading {
+		  background: linear-gradient(to top, #b4b4b4, white);
+		  -webkit-background-clip: text;
+		  -webkit-text-fill-color: transparent;
+		}
+	}
+
+	&.light{
+		.wp-block-heading {
+		  background: linear-gradient(to top, #727272, rgb(0, 0, 0));
+		  -webkit-background-clip: text;
+		  -webkit-text-fill-color: transparent;
+		}
+	}
+
+	
+
+}

@@ -98,8 +98,8 @@
 .wp-block-create-block-marquee-block{
 	section{
 		max-height: 250px;
-		// height: 250px;
-		height: 120px;
+		// height: 120px;
+		height: auto;
 		.marquee{
 			height: 100%;
 			.marquee__content {
@@ -118,15 +118,22 @@
 						object-fit: contain;
 					}
 				}
-				h2{
-					font-weight: 400;
-					color: transparent; /* El interior será transparente */
-					-webkit-text-stroke: 2px #cdcdcd; /* Borde blanco de 1px */
-					text-stroke: 2px #cdcdcd; /* Para navegadores que lo soporten */
-					margin: 0;
-				}
 			}
+
 		} 
+	}
+	&.text-stroke {
+		h1,h2,h3,h4,h5,h6 {
+			font-weight: 400;
+			color: transparent; /* El interior será transparente */
+			-webkit-text-stroke: 2px #cdcdcd; /* Borde blanco de 1px */
+			text-stroke: 2px #cdcdcd; /* Para navegadores que lo soporten */
+			margin: 0;
+			&.color-black{
+				-webkit-text-stroke: 2px #282828; /* Borde blanco de 1px */
+				text-stroke: 2px #282828; /* Para navegadores que lo soporten */
+			}
+		}
 	}
 }
 

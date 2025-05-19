@@ -1,28 +1,19 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
-	"name": "create-block/marquee-block",
+	"name": "create-block/gradient-heading",
 	"version": "0.1.0",
-	"title": "Marquee Block",
+	"title": "Gradient Heading Block",
 	"category": "custom-gutenberg-blocks",
-	"description": "Marquee Block",
-	"icon": "editor-textcolor",
+	"icon": "smiley",
+	"description": "Gradient Heading Block",
 	"supports": {
-		"html": false,
-		"align": true
+		"html": false
 	},
 	"attributes": {
-		"reverse": {
-			"type": "boolean",
-			"default": false
-		},
-		"textStroke": {
-			"type": "boolean",
-			"default": false
-		},
-		"animationTime": {
+		"mode": {
 			"type": "string",
-			"default": "10"
+			"default": "light"
 		}
 	},
 	"textdomain": "gutenpride",
