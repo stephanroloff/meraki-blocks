@@ -1,0 +1,10 @@
+TODOS
+
+-Hacer que los links del primer nivel no seas clickeables, si es asi puede ser un problema en Tablets y mobiles
+si no hay una url definida en ACF entonces debe ser un <p> en lugar de un <a>. O aplicar un preventDefault.
+
+-Error, si un link no tiene url en la pagina Home se marcara como pagina activa (junto con la pagina Home).
+
+-Crear una Mega Menu que ocupe toda el ancho de la pantalla.
+
+-Intentar cambiar los colores de los iconos de los links del menu.
