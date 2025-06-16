@@ -6,6 +6,7 @@
  $fontFamily: 'Roboto';
  $fontSize: 16px;
  $colorPrimary: green;
+ $contentWidth: 1200px;
 
 .wp-block-create-block-menu-block {
   font-family: $fontFamily;
@@ -19,14 +20,14 @@
     background-color: #ffedd7;
     
     .navigation-intern{
-      width: 1200px;
+      width: $contentWidth;
       height: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
 
       .logo{
-        img{
+        svg{
           width: 50px;
           height: 50px;
           // aspect-ratio: 1 / 1;
@@ -47,6 +48,9 @@
             display: flex;
             align-items: center;
             text-decoration: none;
+            svg{
+              fill: $colorPrimary;
+            }
             p{
               font-size: $fontSize;
               color: $colorPrimary;
@@ -67,39 +71,61 @@
 
 
             &.active{
+              svg{
+                fill: red;
+              }
               p{
                 color: red;
               }
             }
           }
 
-          .submenu{
+          .submenu-wrapper{
             display: none;
             position: absolute;
             z-index: 1000;
-            top: 40px;
-            border: 1px solid black;
-            padding: 15px 10px;
-            width: 120px;
+            top: 60px;
+            height: auto;
+            width: 150px;
             background-color: #b5ffe6;
 
-            li{
-              margin-bottom: 10px;
-              a{
-                p{
-                  font-size: $fontSize;
-                  color: $colorPrimary;
-                  margin: 0;
+            &.standard-menu{
+              ul{
+                padding: 20px;
+                margin: 0;
+                li{
+                  margin-bottom: 10px;
+                  a{
+                    p{
+                      font-size: $fontSize;
+                      color: $colorPrimary;
+                      margin: 0;
+                    }
+                  }
                 }
               }
             }
+            
+            &.mega-menu{
+                position: fixed;
+                top: 92px;
+                left: 0;
+                width: 100%;
+                ul{
+                  padding: 0;
+                  width: $contentWidth;
+                }
+            }
           }
           &:hover,
-          &:focus-within{
-            .submenu{
-            display: flex;
-            flex-direction: column;
-          }
+            &:focus-within{
+              .submenu-wrapper{
+                display: flex !important;
+                flex-direction: column;
+                &.mega-menu{
+                  align-items: center;
+                }
+              }
           }
         }
       }
@@ -174,10 +200,61 @@
         display: flex;
         justify-content: center;
         .menu-intern{
-          padding-top: 100px;
-          width: 1200px;
+          padding: 20px;
+          padding-top: 80px;
+          width: $contentWidth;
+
+          // display: grid;
+          // grid-template-columns: repeat(4, 1fr);
+          // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+          .link-group{
+            //Animation
+            //--------------------------------------
+            opacity: 0;
+            animation: fadeInUp 0.5s forwards;
+
+            &:nth-of-type(1){
+              animation-delay: 0.1s;
+            }
+            &:nth-of-type(2){
+              animation-delay: 0.15s;
+              animation-delay: 0.2s;
+            }
+            &:nth-of-type(3){
+              animation-delay: 0.2s;
+              animation-delay: 0.3s;
+            }
+            //--------------------------------------
+
+
+            a.menu-link{
+              display: flex;
+              align-items: center;  
+              transition: 0.3s;
+              p{
+                font-size: 30px;
+              }
+              &:hover{
+                transition: 0.3s;
+                margin-left: 20px;
+              }
+            }
+          }
+
+          a.submenu-link{
+            p{
+              transition: 0.3s;
+              font-size: 20px;
+              &:hover{
+              transition: 0.3s;
+              margin-left: 20px;
+            }
+            }
+          }
+
         }
-    }
+      }
     }
 
   }

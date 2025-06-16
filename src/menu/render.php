@@ -12,7 +12,15 @@
 
 $wrapper_attributes = get_block_wrapper_attributes();
 $logo = get_field('logo', 'option');
+$megamenu = get_field('megamenu', 'option');
 $breakpoint = get_field('breakpoint', 'option');
+
+if($logo){
+    $logo_svg = file_get_contents(get_attached_file($logo));
+}else{
+    $logo_svg = file_get_contents(MY_PLUGIN_PATH_CUSTOM_BLOCKS . 'src/menu/assets/php.svg');
+}
+
 ?>
 
 <div <?php echo $wrapper_attributes?> data-breakpoint="<?= $breakpoint; ?>">
@@ -22,16 +30,16 @@ $breakpoint = get_field('breakpoint', 'option');
         <div class="navigation-intern">
             <div class="logo">
                 <a href="/">
-                    <img src="<?= $logo;?>" width="200" height="200" alt="homepage-logo">
+                    <?= $logo_svg? $logo_svg :'no-logo';?>
                 </a>
             </div>
-
             <div class="menu-desktop">
                 <?php
                 if( have_rows('links', 'option') ):
                     while( have_rows('links', 'option') ) : the_row();
 
                         $icon = get_sub_field('icon', 'option');
+                        if($icon) $icon_svg = file_get_contents(get_attached_file($icon));
                         $link_name = get_sub_field('link_name', 'option');
                         $link_url = get_sub_field('link_url', 'option');
                         $only_icon = get_sub_field('only_icon', 'option');
@@ -39,31 +47,37 @@ $breakpoint = get_field('breakpoint', 'option');
                         
                         <li>
                             <a href="<?= $link_url; ?>">
+                                
                                 <?php if ($icon): ?>
-                                    <img src="<?= $icon; ?>" width="20" height="20" alt="link-icon">
+                                    <?= $icon_svg? $icon_svg : 'no-icon'; ?>
                                 <?php endif; ?>
                                 <?php if (!$only_icon): ?>
                                     <p><?= $link_name; ?></p>
                                 <?php endif; ?>
                             </a>
-                            <?php if (have_rows('submenus', 'option')): ?>
-                            <ul class="submenu">
-                                <?php
-                                while( have_rows('submenus', 'option') ) : the_row();
-                                    $submenu_link_name = get_sub_field('submenu_link_name', 'option');
-                                    $submenu_link_url = get_sub_field('submenu_link_url', 'option');
+                            <div class="submenu-wrapper <?= $megamenu ? 'mega-menu' : 'standard-menu'; ?>">
 
-                                    ?>
-                                    <li>
-                                        <a href="<?= $submenu_link_url; ?>">
-                                            <p><?= $submenu_link_name; ?></p>
-                                        </a>
-                                    </li>
-                                    <?php
-                                endwhile;
-                                ?>
-                            </ul>
-                             <?php endif; ?>
+                                <?php if (have_rows('submenus', 'option')): ?>
+                                    <ul class="submenu">
+                                        <?php
+                                        while( have_rows('submenus', 'option') ) : the_row();
+                                            $submenu_link_name = get_sub_field('submenu_link_name', 'option');
+                                            $submenu_link_url = get_sub_field('submenu_link_url', 'option');
+
+                                            ?>
+                                            <li>
+                                                <a href="<?= $submenu_link_url; ?>">
+                                                    <p><?= $submenu_link_name; ?></p>
+                                                </a>
+                                            </li>
+                                            <?php
+                                        endwhile;
+                                        ?>
+                                    </ul>
+                                <?php endif; ?>
+                                <div class="extra-content"></div>
+                            </div>
+
                         </li>
                         <?php
 
@@ -75,7 +89,7 @@ $breakpoint = get_field('breakpoint', 'option');
                 ?>
             </div>
     
-            <div class="burger-menu">
+            <div class="burger-menu" tabindex='0'>
                 <div class="level-above"></div>
                 <div class="level-middle"></div>
                 <div class="level-below"></div>
@@ -91,31 +105,37 @@ $breakpoint = get_field('breakpoint', 'option');
                         $icon = get_sub_field('icon', 'option');
                         $link_name = get_sub_field('link_name', 'option');
                         $link_url = get_sub_field('link_url', 'option');
+                        ?>
+                        <div class="link-group">
 
-                        if($icon){
-                            ?>
-                            <img src="<?= $icon;?>" width="20" height="20" alt="link-icon">
+                            <a class="menu-link" href="<?= $link_url; ?>">
+                                <?php if ($icon): ?>
+                                    <?= $icon_svg? $icon_svg : 'no-icon'; ?>
+                                <?php endif; ?>
+                                <p><?= $link_name; ?></p>
+                            </a>
                             <?php
-                        }
-                        echo $link_name;
-                        echo $link_url;
-                        echo '<br><br>';
+                            while( have_rows('submenus', 'option') ) : the_row();
+                                $submenu_link_name = get_sub_field('submenu_link_name', 'option');
+                                $submenu_link_url = get_sub_field('submenu_link_url', 'option');
+                                ?>
 
-                        while( have_rows('submenus', 'option') ) : the_row();
-                            $submenu_link_name = get_sub_field('submenu_link_name', 'option');
-                            $submenu_link_url = get_sub_field('submenu_link_url', 'option');
-                            
-                            echo $submenu_link_name;
-                            echo $submenu_link_url;
-                            echo '<br><br>';
-                        endwhile;
-
+                                <a class="submenu-link" href="<?= $submenu_link_url; ?>">
+                                    <p><?= $submenu_link_name; ?></p>
+                                </a>
+                                
+                                <?php
+                            endwhile;
+                            ?>
+                        </div>
+                    <?php
                     endwhile;
 
                 else :
                     echo 'No texts';
                 endif;
                 ?>
+                <div class="extra-content"></div>
             </div>
         </div>
 

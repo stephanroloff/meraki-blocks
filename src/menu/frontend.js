@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('resize', handleResize);
 })
 
-
 //Active Page
 function normalizePath(path) {
   return path.endsWith('/') ? path.slice(0, -1) : path;
