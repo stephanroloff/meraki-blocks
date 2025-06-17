@@ -186,6 +186,7 @@
       display: none;
       position: relative;
       z-index: 1000;
+      overflow-y: scroll;
     }
     &.active{
       .menu-links{
