@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "create-block/gradient-block",
+	"version": "0.1.0",
+	"title": "Gradient Block ",
+	"category": "custom-gutenberg-blocks",
+	"icon": "smiley",
+	"description": "Gradient Block",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"color1": {
+			"type": "string",
+			"default": "#000000"
+		},
+		"height": {
+			"type": "string",
+			"default": "200"
+		}
+	},
+	"textdomain": "gutenpride",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"script": "file:./script.js",
+	"viewScript": "file:./frontend.js",
+	"render": "file:./render.php"
+}

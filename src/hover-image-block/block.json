@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "create-block/hover-image-block",
+	"version": "0.1.0",
+	"title": "Hover Image Block",
+	"category": "custom-gutenberg-blocks",
+	"icon": "smiley",
+	"description": "Hover Image Block",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"MyImageUrl1": {
+			"type": "string",
+			"default": ""
+		},
+		"MyImageUrl2": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "gutenpride",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"script": "file:./script.js",
+	"viewScript": "file:./frontend.js",
+	"render": "file:./render.php"
+}

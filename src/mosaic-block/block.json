@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "create-block/mosaic-block",
+	"version": "0.1.0",
+	"title": "Mosaic Block",
+	"category": "custom-gutenberg-blocks",
+	"icon": "smiley",
+	"description": "Mosaic Block",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+			"MyMediaUrl": {
+			"type": "array",
+			"default": []
+		}
+	},
+	"textdomain": "gutenpride",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"script": "file:./script.js",
+	"viewScript": "file:./frontend.js",
+	"render": "file:./render.php"
+}

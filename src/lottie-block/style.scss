@@ -1,0 +1,65 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ */
+
+.wp-block-create-block-info-box-block {
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+    padding: 32px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    margin: 0 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &.style-2{
+        border: 1px solid white;
+        flex-direction: column-reverse;
+        .lottie-wrapper{
+            justify-content: start;
+        }
+        .box-title{
+            color: white;
+        }
+        .box-description{
+            color: white;
+        }
+    }
+
+    &:hover {
+        
+        &.kongress {
+            border-color: #FF2D55;
+        }
+        &.messe {
+            border-color: #14A800;
+        }
+        &.live {
+            border-color: #3E6AF8;
+        }
+        &.installation {
+            border-color: #F59439;
+        }
+    }
+
+    .lottie-wrapper{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        lottie-player{
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    .box-title{
+        font-size: 20px;
+    }
+    .box-description{
+        font-size: 18px;
+    }
+}

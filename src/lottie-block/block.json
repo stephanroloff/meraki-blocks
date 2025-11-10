@@ -1,0 +1,46 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "create-block/lottie-block",
+	"version": "0.1.0",
+	"title": "Lottie Block",
+	"category": "custom-gutenberg-blocks",
+	"icon": "smiley",
+	"description": "Lottie Block",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"lottieUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"loop": {
+			"type": "boolean",
+			"default": false
+		},
+		"reverse": {
+			"type": "boolean",
+			"default": false
+		},
+		"speed": {
+			"type": "number",
+			"default": 1
+		},
+		"width": {
+			"type": "string",
+			"default": "200"
+		},
+		"height": {
+			"type": "string",
+			"default": "200"
+		}
+	},
+	"textdomain": "gutenpride",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"script": "file:./script.js",
+	"viewScript": "file:./frontend.js",
+	"render": "file:./render.php"
+}

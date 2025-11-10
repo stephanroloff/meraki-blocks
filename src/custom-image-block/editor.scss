@@ -1,0 +1,54 @@
+/**
+ * The following styles get applied only in the editor.
+ */
+
+.wp-block-create-block-custom-image-block {
+    width: 100%;
+    max-width: 100%;
+    
+    .custom-image-block-preview {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .custom-image-block__container {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .custom-image-block__image {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        width: 100%;
+    }
+
+    .custom-image-block__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        background-blend-mode: overlay;
+        z-index: 1;
+    }
+
+    .custom-image-block__placeholder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 200px;
+        border: 2px dashed #ccc;
+        background-color: #f9f9f9;
+        border-radius: 4px;
+        
+        p {
+            margin: 0;
+            color: #666;
+            font-style: italic;
+        }
+    }
+}

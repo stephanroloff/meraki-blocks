@@ -1,0 +1,22 @@
+/**
+ * The following styles get applied inside the editor only.
+ */
+
+.wp-block-create-block-mosaic-block {
+    height: 100px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4c4c4c;
+    border: 1px solid black;
+    border-radius: 10px;
+    .mosaic-block-editor{
+        color: #fff;
+        padding: 5px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+}

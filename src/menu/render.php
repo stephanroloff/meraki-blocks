@@ -10,10 +10,14 @@
  * @var array    $context            Block context.
  */
 
-$wrapper_attributes = get_block_wrapper_attributes();
 $logo = get_field('logo', 'option');
 $megamenu = get_field('megamenu', 'option');
 $breakpoint = get_field('breakpoint', 'option');
+$menu_position = get_field('menu_position', 'option');
+
+$wrapper_attributes = get_block_wrapper_attributes(
+    ['class' => $menu_position]
+);
 
 if($logo){
     $logo_svg = file_get_contents(get_attached_file($logo));

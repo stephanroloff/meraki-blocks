@@ -1,0 +1,71 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "create-block/custom-image-block",
+	"version": "0.1.0",
+	"title": "Custom Image Block",
+	"category": "custom-gutenberg-blocks",
+	"icon": "format-image",
+	"description": "A custom image block with upload functionality and size controls",
+	"supports": {
+		"html": false,
+		"align": true
+	},
+	"attributes": {
+		"mediaId": {
+			"type": "string",
+			"default": ""
+		},
+		"mediaUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"mediaAlt": {
+			"type": "string",
+			"default": ""
+		},
+		"height": {
+			"type": "string",
+			"default": ""
+		},
+		"width": {
+			"type": "string",
+			"default": ""
+		},
+		"maxHeight": {
+			"type": "string",
+			"default": ""
+		},
+		"minHeight": {
+			"type": "string",
+			"default": ""
+		},
+		"maxWidth": {
+			"type": "string",
+			"default": ""
+		},
+		"minWidth": {
+			"type": "string",
+			"default": ""
+		},
+		"objectFit": {
+			"type": "string",
+			"default": "cover"
+		},
+		"overlayColor": {
+			"type": "string",
+			"default": "#000000"
+		},
+		"overlayOpacity": {
+			"type": "number",
+			"default": 0
+		}
+	},
+	"textdomain": "gutenpride",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"script": "file:./script.js",
+	"viewScript": "file:./frontend.js",
+	"render": "file:./render.php"
+}

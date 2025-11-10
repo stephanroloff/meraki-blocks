@@ -8,6 +8,7 @@
  $colorPrimary: green;
  $contentWidth: 1200px;
 
+
 .wp-block-create-block-menu-block {
   font-family: $fontFamily;
   
@@ -258,5 +259,12 @@
       }
     }
 
+  }
+
+  &.fixed{
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1000;
   }
 }
