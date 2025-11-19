@@ -24,8 +24,8 @@
 			"default": false
 		},
 		"speed": {
-			"type": "number",
-			"default": 1
+			"type": "string",
+			"default": "1"
 		},
 		"width": {
 			"type": "string",
@@ -34,6 +34,30 @@
 		"height": {
 			"type": "string",
 			"default": "200"
+		},
+		"animationTrigger": {
+			"type": "string",
+			"default": "autoplay"
+		},
+		"heightStart":{
+			"type": "string",
+			"default": "1"
+		},
+		"clickWhileAnimRuns": {
+			"type": "string",
+			"default": "playuntilfinish"
+		},
+		"once": {
+			"type": "boolean",
+			"default": false
+		},
+		"forward": {
+			"type": "boolean",
+			"default": false
+		},
+		"otherTrigger": {
+			"type": "string",
+			"default": ""
 		}
 	},
 	"textdomain": "gutenpride",

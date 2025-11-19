@@ -1,29 +1,29 @@
 //JAVASCRIPT JUST FRONTEND
-import "@lottiefiles/lottie-player";
+import scrollAnimation from './js/scroll.js';
+import hoverAnimation from './js/hover.js';
+import autoplayAnimation from './js/autoplay.js';
+import clickAnimation from './js/click.js';
 
-//HOVER EFFECT ON LOTTIE PLAYER
+document.addEventListener('DOMContentLoaded', function() {
+    // let animationTrigger = document.querySelector('.lottie-wrapper').getAttribute('data-animation-trigger');
+    let allLottieBlocks = document.querySelectorAll('.wp-block-create-block-lottie-block .lottie-wrapper');
+    
+    allLottieBlocks.forEach(lottieBlock => {
+        let animationTrigger = lottieBlock.getAttribute('data-animation-trigger');
 
-// document.addEventListener('DOMContentLoaded', function() {
-    
-//     const allInfoBoxes = document.querySelectorAll('.wp-block-create-block-info-box-block');
+        if(animationTrigger === 'onscroll') {
+            scrollAnimation(lottieBlock);
+        }
+        if(animationTrigger === 'onhover') {
+            hoverAnimation(lottieBlock);
+        }
+        if(animationTrigger === 'autoplay') {
+            autoplayAnimation(lottieBlock);
+        }
+        if(animationTrigger === 'onclick') {
+            clickAnimation(lottieBlock);
+        }
+    });
+});
 
-//     allInfoBoxes.forEach(infoBox => {        
-//         const lottie = infoBox.querySelector('lottie-player');
-//         // Por defecto pausamos la animación
-//         lottie.stop();
-    
-//         // lottie.loop = true;
-//         // lottie.play();
-    
-//         // Al hacer hover sobre el lottie-player
-//         infoBox.addEventListener('mouseenter', () => {
-//           lottie.setDirection(1);
-//           lottie.play();
-//         });
-    
-//         infoBox.addEventListener('mouseleave', () => {
-//             lottie.setDirection(-1);
-//             lottie.play();
-//         });
-//     })
-// });
+

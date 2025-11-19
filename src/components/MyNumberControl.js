@@ -6,12 +6,13 @@ import {
 
 function MyNumberControl(props) {
     let { attributes, setAttributes } = props.properties
-    let { name, attrName, min, max } = props
+    let { name, attrName, min, max, step=0.1 } = props
 
     return (
         <>
         <PanelRow>
             <NumberControl
+                __next40pxDefaultSize
                 label={name}
                 min={min? min : 0}
                 max={max? max : Infinity}
@@ -19,7 +20,7 @@ function MyNumberControl(props) {
                 value={ attributes[attrName] }
                 // isShiftStepEnabled={ true }
                 // shiftStep={ 1 }
-                step={0.1}
+                step={step}
             />		
         </PanelRow>
         </>

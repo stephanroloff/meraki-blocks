@@ -12,6 +12,8 @@ function MyToggleControl(props) {
         <>
         <PanelRow>
             <ToggleControl
+                __nextHasNoMarginBottom
+                name={attrName}
                 label={name}
                 checked={ attributes[attrName] }
                 onChange={value => setAttributes({ [attrName]: value })}

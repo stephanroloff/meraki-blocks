@@ -6,7 +6,7 @@ import {
 
 function MyTextControl(props) {
     let { attributes, setAttributes } = props.properties
-    let { name, attrName } = props
+    let { name, attrName, placeholder } = props
 
     return (
         <>
@@ -18,6 +18,7 @@ function MyTextControl(props) {
 				rows={15}
                 value={ attributes[attrName] }
                 onChange={value => setAttributes({ [attrName]: value })}
+                placeholder={placeholder}
 			/>
         </PanelRow>
         </>
