@@ -6,6 +6,7 @@ export default function hoverAnimation(lottieBlock) {
     const clickWhileAnimRuns = lottieBlock.dataset.clickWhileAnimRuns;
     const reverse = lottieBlock.dataset.reverse;
     const forward = lottieBlock.dataset.forward;
+    
 
     const lottie = lottieBlock.querySelector('lottie-player');
     let isPlaying = false;
@@ -18,14 +19,25 @@ export default function hoverAnimation(lottieBlock) {
         trigger = document.getElementById(otherTrigger);
     }
 
-    lottie.addEventListener('load', () => {
+    // If the lottie is ready, set the animation direction
+    lottie.addEventListener('ready', () => {
         setAnimationDirection();
     });
+    // Fallback for when the lottie is not ready immediately    
+    setTimeout(() => {
+        setAnimationDirection();
+    }, 10);
+
     
     // Al hacer hover sobre el lottie-player
     trigger.addEventListener('mouseenter', () => {
         isPlaying = true;
         lottie.play();
+        if(reverse) {
+            lottie.setDirection(-1);
+        }else {
+            lottie.setDirection(1);
+        }
     });
 
     
@@ -38,9 +50,7 @@ export default function hoverAnimation(lottieBlock) {
                 isPlaying = false;
             } else if(clickWhileAnimRuns === 'pause') {
                 lottie.pause();
-            } else if(clickWhileAnimRuns === 'reverse') {
-                // setAnimationDirection();
-                // lottie.play();
+            } else if(clickWhileAnimRuns === 'invertDirection') {
                 if(reverse) {
                     lottie.setDirection(1);
                 }else {
@@ -51,19 +61,10 @@ export default function hoverAnimation(lottieBlock) {
 
 
     lottie.addEventListener('complete', () => {
-        // if(lottieBlock.dataset.forward) {
-        //     const totalFrames = lottie.getLottie().totalFrames;
-        //     const animation = lottie.getLottie();
-        //     if(lottieBlock.dataset.reverse) {
-        //         animation.goToAndStop(0, true);
-        //     } else {
-        //         animation.goToAndStop(totalFrames-1, true);
-        //     }
-        //     isPlaying = false;
-        //     return;
-        // }
+        if(forward) {
+            return;
+        }
         
-
         console.log('complete');
         isPlaying = false;
         setAnimationDirection();

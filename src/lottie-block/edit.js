@@ -27,6 +27,7 @@ export default function Edit(props) {
 		forward: attributes.forward !== undefined ? attributes.forward : false,
 		otherTrigger: attributes.otherTrigger || '',
 	};
+	
 
 	let animationTriggerOptions = [
 		{ value: 'autoplay', label: 'Autoplay' },
@@ -39,7 +40,7 @@ export default function Edit(props) {
 		{ value: 'playuntilfinish', label: 'Play until finish (no effect/event)' },
 		{ value: 'stop', label: 'Stop' },
 		{ value: 'pause', label: 'Pause' },
-		{ value: 'reverse', label: 'Reverse' },
+		{ value: 'invertDirection', label: 'Invert Direction' },
 	];
 
 	let textLabel = '';
@@ -70,9 +71,8 @@ export default function Edit(props) {
 
                     {
 					attributes.animationTrigger === 'autoplay' || 
-					attributes.animationTrigger === 'onhover' ||
-					attributes.animationTrigger === 'onclick' && attributes.clickWhileAnimRuns !== 'reverse' ||
-					attributes.animationTrigger === 'onhover' && attributes.clickWhileAnimRuns !== 'reverse'
+					attributes.animationTrigger === 'onclick' && attributes.forward === false && attributes.once === false ||
+					attributes.animationTrigger === 'onhover' && attributes.forward === false && attributes.once === false
 					?
 						<MyToggleControl name={'Loop'} attrName={'loop'} properties={props} />
 					:''}
@@ -104,14 +104,16 @@ export default function Edit(props) {
 						</>
 					:''}
 
-                    {
-					attributes.animationTrigger === 'onclick' && attributes.clickWhileAnimRuns === 'reverse' ||
-					attributes.animationTrigger === 'onhover' && attributes.clickWhileAnimRuns === 'reverse'
+				    <MyToggleControl name={'Reverse'} attrName={'reverse'} properties={props} />
+					
+					{
+					attributes.animationTrigger === 'onhover' ||
+					attributes.animationTrigger === 'onclick'
 					?
-					'':
-					    <MyToggleControl name={'Reverse'} attrName={'reverse'} properties={props} />
-					}
 					<MyTextControl name={'Other Trigger (use id)'} placeholder={'#id'} attrName={'otherTrigger'} properties={props} />
+
+					:''}
+
 					<MyNumberControl name={'Speed'} attrName={'speed'} properties={props} min={0} max={10} step={0.1} />
 					<MyNumberControl name={'Width'} attrName={'width'} properties={props} min={100} max={1000} step={10} />
 					<MyNumberControl name={'Height'} attrName={'height'} properties={props} min={100} max={1000} step={10} />
