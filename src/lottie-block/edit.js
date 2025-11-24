@@ -80,6 +80,7 @@ export default function Edit(props) {
                     {
 					!attributes.loop &&
 					(attributes.animationTrigger === 'autoplay' || 
+					attributes.animationTrigger === 'onhover' ||
 					attributes.animationTrigger === 'onclick')
 					?
 						<MyToggleControl name={'Once'} attrName={'once'} properties={props} />

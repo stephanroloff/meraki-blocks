@@ -87,14 +87,14 @@ export default async function clickAnimation(lottieBlock) {
     }
 
     function playuntilfinish() {
-        if(!isPlaying) {
+        if(isPlaying) {
+            return;
+        }else{
             if(forward) {
                 setInitialConfiguration();
             }
             lottie.play();
             isPlaying = true;
-            return;
-        }else{
             return;
         }
     }
@@ -152,8 +152,5 @@ export default async function clickAnimation(lottieBlock) {
             isPlaying = true;
             return;
         }
-
     }
-
-
 }
