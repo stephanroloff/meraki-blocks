@@ -25,7 +25,7 @@ $clickWhileAnimRuns = isset($attributes['clickWhileAnimRuns']) ? $attributes['cl
 $once = isset($attributes['once']) ? $attributes['once'] : false;
 $forward = isset($attributes['forward']) ? $attributes['forward'] : false;
 $otherTrigger = isset($attributes['otherTrigger']) ? $attributes['otherTrigger'] : '';
-
+$autoplayAction = isset($attributes['autoplayAction']) ? $attributes['autoplayAction'] : 'onclick';
 // Generar ID único para cada instancia del bloque
 $lottie_id = 'lottie-' . wp_unique_id();
 ?>
@@ -40,6 +40,7 @@ $lottie_id = 'lottie-' . wp_unique_id();
     data-once="<?= esc_attr($once) ?>"
     data-forward="<?= esc_attr($forward) ?>"
     data-other-trigger="<?= esc_attr($otherTrigger) ?>"
+    data-autoplay-action="<?= esc_attr($autoplayAction) ?>"
     >
         <lottie-player
         id="<?= esc_attr($lottie_id) ?>"

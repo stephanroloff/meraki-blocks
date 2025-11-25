@@ -43,11 +43,18 @@ export default function Edit(props) {
 		{ value: 'invertDirection', label: 'Invert Direction' },
 	];
 
+	let autoplayActionOptions = [
+		{ value: 'onclick', label: 'On Click' },
+		{ value: 'onhover', label: 'On Hover' },
+	];
+
 	let textLabel = '';
 	if(attributes.animationTrigger === 'onhover'){
 		textLabel = 'On mouse out';
 	} else if(attributes.animationTrigger === 'onclick'){
 		textLabel = 'Click while animation runs';
+	} else if(attributes.animationTrigger === 'autoplay'){
+		textLabel = 'Action while animation runs';
 	} 
 
 
@@ -64,9 +71,16 @@ export default function Edit(props) {
 					
 					{
 					attributes.animationTrigger === 'onclick' ||
-					attributes.animationTrigger === 'onhover'
+					attributes.animationTrigger === 'onhover' ||
+					attributes.animationTrigger === 'autoplay'
 					?
 						<MySelectControl label={textLabel} attrName={'clickWhileAnimRuns'} properties={props} options={clickWhileAnimRunsOptions} />
+					:''}
+
+{
+					attributes.animationTrigger === 'autoplay' && attributes.clickWhileAnimRuns !== 'playuntilfinish'
+					?
+						<MySelectControl attrName={'autoplayAction'} properties={props} options={autoplayActionOptions} />
 					:''}
 
                     {
@@ -107,7 +121,8 @@ export default function Edit(props) {
 					
 					{
 					attributes.animationTrigger === 'onhover' ||
-					attributes.animationTrigger === 'onclick'
+					attributes.animationTrigger === 'onclick' ||
+					attributes.animationTrigger === 'autoplay'
 					?
 					<MyTextControl name={'Other Trigger (use id)'} placeholder={'#id'} attrName={'otherTrigger'} properties={props} />
 

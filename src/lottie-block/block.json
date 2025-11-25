@@ -58,6 +58,10 @@
 		"otherTrigger": {
 			"type": "string",
 			"default": ""
+		},
+		"autoplayAction": {
+			"type": "string",
+			"default": "onclick"
 		}
 	},
 	"textdomain": "gutenpride",
