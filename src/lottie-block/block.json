@@ -62,6 +62,18 @@
 		"autoplayAction": {
 			"type": "string",
 			"default": "onclick"
+		},
+		"delay": {
+			"type": "string",
+			"default": "0"
+		},
+		"usePlaceholderInEditor": {
+			"type": "boolean",
+			"default": false
+		},
+		"freezeAt": {
+			"type": "string",
+			"default": ""
 		}
 	},
 	"textdomain": "gutenpride",

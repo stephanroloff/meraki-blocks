@@ -2,4 +2,16 @@
  * The following styles get applied inside the editor only.
  */
 
-.wp-block-create-block-dynamic-block {}
+.wp-block-create-block-lottie-block {
+    .lottie-block-editor-placeholder {
+        background-color: #787878;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p{
+            color: #fff;
+            font-size: 20px;
+            text-align: center;
+        }
+    }
+}

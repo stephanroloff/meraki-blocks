@@ -5,6 +5,7 @@ export default function autoplayAnimation(lottieBlock) {
   const clickWhileAnimRuns = lottieBlock.dataset.clickWhileAnimRuns;
   const lottie = lottieBlock.querySelector("lottie-player");
   const reverse = lottieBlock.dataset.reverse;
+  const delay = lottieBlock.dataset.delay;
   let startActive = false;
   let trigger = lottieBlock;
   let isPlaying = false;
@@ -19,21 +20,19 @@ export default function autoplayAnimation(lottieBlock) {
   });
   // Fallback for when the lottie is not ready immediately    
   setTimeout(() => {
+
     if(!startActive) {
       setInitialConfiguration();
       updateAnimation();
       startActive = true;
       isPlaying = true;
+    } 
+    //setting the event listener for the autoplay action
+    if(autoplayAction === 'onclick') {
+      clickEvent();
+    } else if(autoplayAction === 'onhover') {
+      hoverEvent();
     }
-
-      console.log('autoplayAction', autoplayAction);
-      
-      //setting the event listener for the autoplay action
-      if(autoplayAction === 'onclick') {
-        clickEvent();
-      } else if(autoplayAction === 'onhover') {
-        hoverEvent();
-      }
 
   }, 100);
 
@@ -43,7 +42,9 @@ export default function autoplayAnimation(lottieBlock) {
     let percentage = Math.round(100 - (rect.top  / window.innerHeight * 100));
     
     if(percentage >= startInPercentage) {
-      lottie.play();
+      setTimeout(() => {
+        lottie.play();
+      }, delay);
     }
   }
 

@@ -26,6 +26,9 @@ export default function Edit(props) {
 		once: attributes.once !== undefined ? attributes.once : false,
 		forward: attributes.forward !== undefined ? attributes.forward : false,
 		otherTrigger: attributes.otherTrigger || '',
+		delay: attributes.delay !== undefined ? attributes.delay : 0,
+		usePlaceholderInEditor: attributes.usePlaceholderInEditor !== undefined ? attributes.usePlaceholderInEditor : false,
+		freezeAt: attributes.freezeAt !== undefined ? attributes.freezeAt : 0,
 	};
 	
 
@@ -67,6 +70,7 @@ export default function Edit(props) {
 						<p style={{ fontSize: "11px" }}>Only JSON files are allowed</p>
 						<MyLottieUpload mediaURLAttrName={'lottieUrl'} properties={props} />
 					</div>
+					<MyToggleControl name={' Use placeholder in editor'} attrName={'usePlaceholderInEditor'} properties={props} />
 					<MySelectControl label={'Animation Trigger'} attrName={'animationTrigger'} properties={props} options={animationTriggerOptions} />
 					
 					{
@@ -112,7 +116,7 @@ export default function Edit(props) {
 					attributes.animationTrigger === 'onscroll'
 					?
 						<>
-							<MyNumberControl name={'Height Activate (%)'} attrName={'heightStart'} properties={props} min={0} max={100} step={1} />
+							<MyNumberControl name={'Height Activate (%)'} attrName={'heightStart'} properties={props} min={-100} max={100} step={1} />
 							<p style={{ fontSize: "11px", marginTop: "10px" }}>The animation starts at this screen percentage, with 0% at the bottom and 100% at the top.</p>
 						</>
 					:''}
@@ -122,21 +126,39 @@ export default function Edit(props) {
 					{
 					attributes.animationTrigger === 'onhover' ||
 					attributes.animationTrigger === 'onclick' ||
-					attributes.animationTrigger === 'autoplay'
+					attributes.animationTrigger === 'autoplay' && attributes.clickWhileAnimRuns !== 'playuntilfinish'
 					?
 					<MyTextControl name={'Other Trigger (use id)'} placeholder={'#id'} attrName={'otherTrigger'} properties={props} />
 
 					:''}
 
+
+			        {
+					attributes.animationTrigger === 'autoplay'
+					?
+					<MyNumberControl name={'Delay (Time in milliseconds)'} attrName={'delay'} properties={props} min={0} max={10000} step={1} />
+					:''}
+
 					<MyNumberControl name={'Speed'} attrName={'speed'} properties={props} min={0} max={10} step={0.1} />
+					{
+					attributes.animationTrigger === 'onscroll'
+					?
+					<MyNumberControl name={'Freeze at (%)'} attrName={'freezeAt'} properties={props} min={1} max={99} step={1} />
+					:''}
 					<MyNumberControl name={'Width'} attrName={'width'} properties={props} min={100} max={1000} step={10} />
 					<MyNumberControl name={'Height'} attrName={'height'} properties={props} min={100} max={1000} step={10} />
 				</PanelBody>
 			</InspectorControls>
-			<ServerSideRender
-				block={metadata.name}
-				attributes={renderAttributes}
-			/>
+			{attributes.usePlaceholderInEditor ? (
+			<div className="lottie-block-editor-placeholder" style={{width:attributes.width + 'px', height: attributes.height + 'px'}}>
+				<p>Animation <br/>Placeholder</p>
+			</div>
+			):(
+				<ServerSideRender
+					block={metadata.name}
+					attributes={renderAttributes}
+				/>
+			)}
 		</div>
 	);
 }
