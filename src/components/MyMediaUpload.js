@@ -33,7 +33,7 @@ function MyMediaUpload(props) {
     return (
         <>
             {
-                !attributes[mediaIDAttrName] ?
+                !attributes[mediaURLAttrName] ?
                     <MediaUploadCheck>
                         <MediaUpload
                             onSelect={onSelectMedia}
@@ -51,10 +51,11 @@ function MyMediaUpload(props) {
                     </MediaUploadCheck>
                     :
                     <div className="image-wrapper">
-                        <img src={attributes[mediaURLAttrName]} alt={attributes[mediaAltAttrName]} />
+                        <img src={attributes[mediaURLAttrName]} alt={attributes[mediaAltAttrName]} style={{border: '1px solid #dedede'}} />
                         {/* <img src={pfeil} alt="" /> */}
                         {isSelected ? (
                             <Button
+                                variant="secondary"
                                 className="remove-image"
                                 onClick={onRemoveMedia}
                             >
