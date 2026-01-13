@@ -14,15 +14,16 @@ $logo = get_field('logo', 'option');
 $megamenu = get_field('megamenu', 'option');
 $breakpoint = get_field('breakpoint', 'option');
 $menu_position = get_field('menu_position', 'option');
+$multi_language = get_field('multi_language', 'option');
 
 $wrapper_attributes = get_block_wrapper_attributes(
     ['class' => $menu_position]
 );
 
 if($logo){
-    $logo_svg = file_get_contents(get_attached_file($logo));
+    $logo_url = $logo;
 }else{
-    $logo_svg = file_get_contents(MY_PLUGIN_PATH_CUSTOM_BLOCKS . 'src/menu/assets/php.svg');
+    $logo_url = MY_PLUGIN_PATH_CUSTOM_BLOCKS . 'src/menu/assets/php.svg';
 }
 
 ?>
@@ -33,8 +34,8 @@ if($logo){
 
         <div class="navigation-intern">
             <div class="logo">
-                <a href="/">
-                    <?= $logo_svg? $logo_svg :'no-logo';?>
+                <a href="<?= home_url(); ?>">
+                    <img width="50px" height="50px" src="<?= $logo_url; ?>" alt="Logo">
                 </a>
             </div>
             <div class="menu-desktop">
@@ -92,7 +93,11 @@ if($logo){
                 endif;
                 ?>
             </div>
-    
+            <?php if(function_exists('icl_get_languages') && $multi_language): ?>
+            <div class="language-selector">
+                <?php echo do_shortcode('[wpml_language_selector_widget]');?>
+            </div>
+            <?php endif; ?>
             <div class="burger-menu" tabindex='0'>
                 <div class="level-above"></div>
                 <div class="level-middle"></div>
@@ -100,8 +105,16 @@ if($logo){
             </div>
         </div>
 
-        <div class="menu-links">
+        <div class="menu-mobile menu-links">
             <div class="menu-intern">
+                <div class="logo">
+                    <a href="<?= home_url(); ?>">
+                        <img width="50px" height="50px" src="<?= $logo_url; ?>" alt="Logo">
+                    </a>
+                </div>
+                <div class="language-selector">
+                    <?php echo do_shortcode('[wpml_language_selector_widget]');?>
+                </div>
                 <?php
                 if( have_rows('links', 'option') ):
                     while( have_rows('links', 'option') ) : the_row();
