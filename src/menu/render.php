@@ -30,7 +30,7 @@ if($logo){
 
 <div <?php echo $wrapper_attributes?> data-breakpoint="<?= $breakpoint; ?>">
 
-    <nav class="navigation">
+    <nav class="navigation at-top">
 
         <div class="navigation-intern">
             <div class="logo">

@@ -181,6 +181,19 @@
             left: 0;
             width: 100vw;
             z-index: 1000;
+            transform: translateY(0);          
+            transition: 0.3s ease;
+
+            &.hide {
+                transition: 0.3s ease;
+                transform: translateY(-100%);
+            }
+
+            &.at-top {
+                transition: 0.3s ease;
+                // background-color: rgba(255, 255, 255, 0.05);
+                background-color: green;
+            }
         }
     }
 }
