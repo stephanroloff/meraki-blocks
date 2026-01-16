@@ -1,0 +1,58 @@
+@import './animations.scss';
+
+.search-function{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(204, 204, 204, 0.9);
+    backdrop-filter: blur(10px);
+    z-index: 10000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    padding: 0 20px;
+
+    .close-button{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        img{
+            width: 34px;
+        }
+    }
+
+    form{
+        width: 800px;
+        position: relative;
+        top: -75px;
+        label{
+            display: none;
+        }
+       button{}
+    }
+
+    &.active{
+        display: flex;
+        animation: fadeInAnimation 0.1s forwards;
+    }
+    &.closing{
+        animation: fadeOutAnimation 0.1s forwards;
+    }
+}
+
+.search-button{
+    button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        height: 100%;
+        img{}
+    }
+}

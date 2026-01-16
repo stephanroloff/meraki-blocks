@@ -10,6 +10,8 @@
  * @var array    $context            Block context.
  */
 
+ include MY_PLUGIN_PATH_CUSTOM_BLOCKS_PATH . 'src/menu/php/search-block-shortcode.php';
+
 $logo = get_field('logo', 'option');
 $megamenu = get_field('megamenu', 'option');
 $breakpoint = get_field('breakpoint', 'option');
@@ -92,12 +94,20 @@ if($logo){
                     echo 'No texts';
                 endif;
                 ?>
+
+                <?php if(function_exists('icl_get_languages') && $multi_language): ?>
+                    <div class="language-selector">
+                        <?php echo do_shortcode('[wpml_language_selector_widget]');?>
+                    </div>
+                <?php endif; ?>
+
+                <div class="search-button" tabindex='0'>
+                    <button>
+                        <img src="<?= MY_PLUGIN_PATH_CUSTOM_BLOCKS . 'src/menu/assets/search-icon.svg'; ?>" alt="Search">
+                    </button>
+                </div>
             </div>
-            <?php if(function_exists('icl_get_languages') && $multi_language): ?>
-            <div class="language-selector">
-                <?php echo do_shortcode('[wpml_language_selector_widget]');?>
-            </div>
-            <?php endif; ?>
+
             <div class="burger-menu" tabindex='0'>
                 <div class="level-above"></div>
                 <div class="level-middle"></div>
@@ -152,11 +162,26 @@ if($logo){
                     echo 'No texts';
                 endif;
                 ?>
+                
+                <div class="search-button" tabindex='0'>
+                    <button>
+                        <p>Suche</p>
+                        <img src="<?= MY_PLUGIN_PATH_CUSTOM_BLOCKS . 'src/menu/assets/search-icon.svg'; ?>" alt="Search">
+                    </button>
+                </div>
+
                 <div class="extra-content"></div>
             </div>
         </div>
 
     </nav>
+
+    <div class="search-function">
+        <div class="close-button" tabindex='0'>
+            <img src="<?= MY_PLUGIN_PATH_CUSTOM_BLOCKS . 'src/menu/assets/close-icon.svg'; ?>" alt="Close">
+        </div>
+        <?php echo do_shortcode('[search_block]');?>
+    </div>
 <div>
     
 
