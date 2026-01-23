@@ -9,16 +9,17 @@
 @import 'swiper/css/effect-fade';
 
 .wp-block-create-block-carousel-main-block{
-	height: auto !important;
+	// height: auto !important;
 	width: 100% !important;
 	max-width: 100% !important;
 	&.swiper {
 		.swiper-wrapper {
+			.swiper-slide {
+				// width: 100%;
+				.slide_intern {
+					height: 100% !important;
+				}
 	
-			.slide {
-				width: 100%;
-	
-				.slide_intern {}
 			}
 		}
 	

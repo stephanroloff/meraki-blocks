@@ -14,7 +14,7 @@ export default function save(props) {
             data-show-bullets={showBullets}
             data-show-arrows={showArrows}
             data-effect={effect}
-            style={{ maxHeight: `${height}px` }} 
+            style={{ height: `${height}px` }} 
         >
             <div className="swiper-wrapper">
                 <InnerBlocks.Content />
