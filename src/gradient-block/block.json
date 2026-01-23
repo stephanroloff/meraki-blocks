@@ -18,6 +18,10 @@
 		"height": {
 			"type": "string",
 			"default": "200"
+		},
+		"degrees": {
+			"type": "string",
+			"default": "0"
 		}
 	},
 	"textdomain": "gutenpride",

@@ -20,11 +20,12 @@ $wrapper_attributes = get_block_wrapper_attributes();
 // $color = '#D8D8D8';
 $color1 = $attributes['color1'];
 $height = $attributes['height'];
+$degrees = $attributes['degrees'];
 ?>
 <div <?php echo $wrapper_attributes; ?>>
     <div class="gradient-container"
         style="height: <?php echo $height; ?>px; background: linear-gradient(
-            180deg,
+            <?php echo $degrees; ?>deg,
             <?php echo $color1; ?> 0%,
             <?php echo $color1; ?>E6 20%,
             <?php echo $color1; ?>CC 30%,

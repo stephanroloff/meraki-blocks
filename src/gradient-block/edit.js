@@ -17,13 +17,15 @@ export default function Edit(props) {
 					<p>For example: #26a8ff</p>
 					<MyTextControl name={'Color 1'} attrName={'color1'} properties={props} />
 					<MyNumberControl name={'Height (px)'} attrName={'height'} min ={0} properties={props} />
+					<MyNumberControl name={'Degrees'} attrName={'degrees'} min ={0} max={360} properties={props} />
 				</PanelBody>
 			</InspectorControls>			
 			<ServerSideRender
 				block={metadata.name}
 				attributes={{
 					color1: attributes.color1,
-					height: attributes.height
+					height: attributes.height,
+					degrees: attributes.degrees
 				}}
 			/>
 		</div>
