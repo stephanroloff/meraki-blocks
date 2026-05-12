@@ -17,8 +17,8 @@ $lottie_url = !empty($attributes['lottieUrl']) ? esc_url($attributes['lottieUrl'
 $speed = isset($attributes['speed']) ? floatval($attributes['speed']) : 1;
 $loop = isset($attributes['loop']) ? $attributes['loop'] : false;
 $reverse = isset($attributes['reverse']) ? $attributes['reverse'] : false;
-$width = isset($attributes['width']) ? intval($attributes['width']) : 200;
-$height = isset($attributes['height']) ? intval($attributes['height']) : 200;
+$width = isset($attributes['width']) ? $attributes['width'] : '200px';
+$height = isset($attributes['height']) ? $attributes['height'] : '200px';
 $animationTrigger = isset($attributes['animationTrigger']) ? $attributes['animationTrigger'] : 'autoplay';
 $heightStart = isset($attributes['heightStart']) ? intval($attributes['heightStart']) : 0;
 $clickWhileAnimRuns = isset($attributes['clickWhileAnimRuns']) ? $attributes['clickWhileAnimRuns'] : 'playuntilfinish';
@@ -53,7 +53,7 @@ $lottie_id = 'lottie-' . wp_unique_id();
         speed="<?= esc_attr($speed) ?>"
         <?= $loop ? 'loop' : '' ?>
         <?= $reverse ? 'direction="-1"' : 'direction="1"' ?> 
-        style="width: <?= esc_attr($width) ?>px; height: <?= esc_attr($height) ?>px;"
+        style="width: <?= esc_attr($width) ?>; height: <?= esc_attr($height) ?>px;"
         class="lottie-player"
         >
         </lottie-player>

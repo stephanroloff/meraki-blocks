@@ -1,7 +1,8 @@
 import { __ } from '@wordpress/i18n';
 import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
 import './editor.scss';
-import ServerSideRender from '@wordpress/server-side-render';
+// import ServerSideRender from '@wordpress/server-side-render';
+import { ServerSideRender } from '@wordpress/server-side-render';
 import metadata from './block.json';
 import MyLottieUpload from './MyLottieUpload';
 import MyToggleControl from '../components/MyToggleControl';
@@ -9,6 +10,7 @@ import MyNumberControl from '../components/MyNumberControl';
 import { PanelBody } from '@wordpress/components';
 import MySelectControl from '../components/MySelectControl';
 import MyTextControl from '../components/MyTextControl';
+import MyUnitControl from '../components/MyUnitControl';
 
 export default function Edit(props) {
 	let { attributes } = props;
@@ -81,7 +83,7 @@ export default function Edit(props) {
 						<MySelectControl label={textLabel} attrName={'clickWhileAnimRuns'} properties={props} options={clickWhileAnimRunsOptions} />
 					:''}
 
-{
+					{
 					attributes.animationTrigger === 'autoplay' && attributes.clickWhileAnimRuns !== 'playuntilfinish'
 					?
 						<MySelectControl attrName={'autoplayAction'} properties={props} options={autoplayActionOptions} />
@@ -145,8 +147,8 @@ export default function Edit(props) {
 					?
 					<MyNumberControl name={'Freeze at (%)'} attrName={'freezeAt'} properties={props} min={1} max={99} step={1} />
 					:''}
-					<MyNumberControl name={'Width'} attrName={'width'} properties={props} min={100} max={1000} step={10} />
-					<MyNumberControl name={'Height'} attrName={'height'} properties={props} min={100} max={1000} step={10} />
+					<MyUnitControl name={'Width'} attrName={'width'} properties={props} />
+					<MyUnitControl name={'Height'} attrName={'height'} properties={props} />
 				</PanelBody>
 			</InspectorControls>
 			{attributes.usePlaceholderInEditor ? (

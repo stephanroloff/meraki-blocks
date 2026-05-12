@@ -4,8 +4,12 @@
  */
 
 .wp-block-create-block-lottie-block{
-    width: fit-content;
+    // width: fit-content;
+    width: 100%;
+    max-width: 100%;
     .lottie-wrapper{
-        width: fit-content;
+        // width: fit-content;
+        max-width: 100%;
+        width: 100%;
     }
 }
